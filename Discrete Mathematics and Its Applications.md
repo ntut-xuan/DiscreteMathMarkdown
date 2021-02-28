@@ -376,7 +376,7 @@ $\neg (p \or q) \equiv \neg p \and \neg q$
 
 ##### Example 3
 
-證明 $p \rightarrow q$ 和 $\neg p \or q$ 邏輯等價。
+證明 $p \rightarrow q$ 和 	$\neg p \or q$ 邏輯等價。
 
 
 
@@ -524,7 +524,7 @@ $\neg(p \leftrightarrow q) \equiv p \leftrightarrow \neg q$
 
 
 
-##### Example 
+##### Example 1
 
 證明 $\neg (p \rightarrow q) \equiv p \and \neg q$ 邏輯等價
 
@@ -536,7 +536,7 @@ $\neg(p \leftrightarrow q) \equiv p \leftrightarrow \neg q$
 
 
 
-##### Example
+##### Example 2
 
 利用一連串的邏輯等價，證明 $\neg (p \or (\neg p \and q)) \equiv \neg p \and \neg q$
 
@@ -552,7 +552,7 @@ $\neg(p \leftrightarrow q) \equiv p \leftrightarrow \neg q$
 
 
 
-##### Example
+##### Example 3
 
 證明 $(p \and q) \rightarrow (p \or q)$為恆等式
 
@@ -565,6 +565,119 @@ $\neg(p \leftrightarrow q) \equiv p \leftrightarrow \neg q$
 利用交換律，$(\neg p \or p) \or(\neg q \or q) \equiv T \or T \equiv T$
 
 故$(p \and q) \rightarrow (p \or q)$為恆等式，證畢。
+
+
+
+#### Introduce - 滿足命題
+
+滿足命題的定義是，若有一個複合命題$P$，若能找到一組變數能夠使$P$為true，則$P$能夠被滿足。
+
+
+
+##### Example
+
+判斷以下三個複合命題$P$是否能夠被滿足。
+
+1. $(p \and \neg q) \or (q \and \neg r) \and (r \or \ \neg p)$
+2. $(p \and q \and r) \or (\neg p \and \neg q \and \neg r)$
+3. $(p \or \neg q) \and (q \or \neg r) \and (r \or \neg p) \and (p \or q \or r) \and (\neg p \or \neg q \or \neg r)$
+
+
+
+第一個命題：若$p,q,r$其中有一個是true，則可以滿足命題：。
+
+第二個命題：若$p,q,r$都為true或者都為false，則可以滿足命題。
+
+第三個命題：
+
+考慮到
+
+$(p \or \neg q) \and (q \or \neg r) \and (r \or \neg p)$必須要是true，則$p, q, r$都必須要是true，或者$p, q, r$都必須要是false。
+
+$(p \or q \or r) \and (\neg p \or \neg q \or \neg r)$必須要是true，則$p, q, r$都不能是true，或者都不能是false。
+
+因此，兩者矛盾，故$(p \or \neg q) \and (q \or \neg r) \and (r \or \neg p) \and (p \or q \or r) \and (\neg p \or \neg q \or \neg r)$不能被滿足。
+
+
+
+### 1.4 謂語和限定詞
+
+#### Introduce - 謂語
+
+命題是具有真假意義的陳述句，而陳述句是由主語與謂語所組成的。
+
+例如我們可以說
+
+1. 阿軒是北科大的學生
+2. 阿哲不是北科大的學生
+
+則我們假設$P(x)$為：$x$是北科大的學生
+
+在這個範例中，$P(x)$為謂語，$x$為主語，當$x$被賦予值，則$P(x)$則成為一個命題。
+
+因此則上面兩句分別可以寫成$P($阿軒$)$與$P($阿哲$)$，所得到的結果分別為true與false。
+
+
+
+##### Example 1
+
+若$P(x)$代表$x > 3$，求真值$P(2)$與$P(4)$
+
+
+
+$P(2)$等於$2>3$，則$P(2)$的真值為false。
+
+$P(4)$等於$4 > 3$，則$P(4)$的真值為true。
+
+
+
+##### Example 2
+
+若$A(x)$代表「電腦$x$正在被入侵者攻擊」，且我們假設正在被入侵者攻擊的電腦為$CS2$與$MATH1$
+
+則求真值$A(CS1)$與$A(CS2)$，以及$A(MATH1)$
+
+
+
+我們可以很清楚的知道，$CS2$與$MATH1$正在被攻擊，因此我們可以知道$A(CS2) = T$，$A(MATH1) = T$
+
+而$CS1$沒有被攻擊，故$A(CS1) = F$
+
+
+
+##### Example 3
+
+若$Q(x, y)$代表敘述$x = y + 3$，則求真值$Q(1, 2)$與$Q(3, 0)$
+
+
+
+$Q(1, 2) \Rightarrow 1 \neq 2 + 3 \Rightarrow Q(1, 2) = F$
+
+$Q(3, 0) \Rightarrow 3 = 0 + 3 \Rightarrow Q(3, 0) = T$
+
+
+
+##### Example 4
+
+令$A(c, n)$代表「電腦$c$連接著網路$n$」，其中$c$代表電腦而$n$代表著網路，假設$MATH1$正在連接著網路$CAMPUS2$而不是$CAMPUS1$，求$A(MATH1, CAMPUS1)$與$A(MATH1, CAMPUS2)$的真值。
+
+
+
+因為$MATH1$沒有連接著網路$CAMPUS1$，因此$A(MATH1, CAMPUS1)$為false
+
+而$MATH1$連接著網路$CAMPUS2$因此$A(MATH1, CAMPUS2)$為true
+
+
+
+##### Example 5
+
+令$R(x, y, z)$代表$x + y = z$，求真值$R(1, 2, 3)$與$R(0, 0, 1)$
+
+
+
+因為$R(1, 2, 3)$代表$1 + 2 = 3$，因此$R(1, 2, 3)$為true。
+
+因為$R(0, 0, 1)$代表$0 + 0 = 1$，因此$R(0, 0, 1)$為false。
 
 
 
