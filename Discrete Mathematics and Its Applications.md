@@ -82,7 +82,7 @@ or even more simply as "Vandana’s smartphone has less then 32GB of memory"
 
 
 
-#### Table - 邏輯非的真值表
+##### Table - 邏輯非的真值表
 
 ![image-20210115200649258](https://i.imgur.com/inKIp7g.png)
 
@@ -106,7 +106,7 @@ The conjunction of the propositions $p$ and $q$ is
 
 
 
-#### Table - 邏輯與的真值表
+##### Table - 邏輯與的真值表
 
 ![image-20210115201510053](https://i.imgur.com/p2VL2Fy.png)
 
@@ -132,7 +132,7 @@ The disjunction of the propositions p and q is
 
 
 
-#### Table - 邏輯或的真值表
+##### Table - 邏輯或的真值表
 
 ![image-20210115201526194](https://i.imgur.com/EHoHvII.png)
 
@@ -156,7 +156,7 @@ The disjunction of the propositions p and q is
 
 
 
-#### Table - 實質蘊涵的真值表
+##### Table - 實質蘊涵的真值表
 
 ![image-20210224131607538](https://i.imgur.com/KegQo7N.png)
 
@@ -225,7 +225,7 @@ Q：沒有拿到A，則P：期末考考100分
 
 
 
-#### Table - 換質換位命題的真值表
+##### Table - 換質換位命題的真值表
 
 | $p$  | $q$  | $\neg q \rightarrow \neg p$ | $p \rightarrow q$ |
 | ---- | ---- | --------------------------- | ----------------- |
@@ -244,7 +244,7 @@ Q：沒有拿到A，則P：期末考考100分
 
 
 
-#### Table - 換質命題的真值表
+##### Table - 換質命題的真值表
 
 | $p$  | $q$  | $\neg p \rightarrow \neg q$ |
 | ---- | ---- | --------------------------- |
@@ -265,7 +265,7 @@ Q：沒有拿到A，則P：期末考考100分
 
 
 
-#### Table - 若為且若的真值表
+##### Table - 若為且若的真值表
 
 | $p$  | $q$  | $p \leftrightarrow q$ |
 | ---- | ---- | --------------------- |
@@ -680,4 +680,435 @@ $Q(3, 0) \Rightarrow 3 = 0 + 3 \Rightarrow Q(3, 0) = T$
 因為$R(0, 0, 1)$代表$0 + 0 = 1$，因此$R(0, 0, 1)$為false。
 
 
+
+#### Introduce - 量化
+
+量化用來決定一個謂詞，在一定的事物上成立的程度。
+
+產生量化的語言叫作量詞。
+
+
+
+舉個例子，「我**所有**的玻璃都破了」，「**大量**的人是聰明的」。
+
+通常來說，有兩種量化的類型：全稱量化、存在量化
+
+
+
+#### Definition - 全稱量化
+
+對於$P(x)$來說，全稱量化的代表對於所有在$P$的定義域內的$x$，我們可以寫作$\forall x P(x)$
+
+$\forall$符號代表全域量詞，我們把$\forall x P(x)$讀作"for all $x, P(x)$" 或者"for every $x, P(x)$"。
+
+若存在一個$x$，使得$P(x)$為false，則我們把他稱作$\forall x P(x)$的反例。
+
+
+
+##### Table - 量化類別
+
+| 敘述             | 什麼時候為true                                  | 什麼時候為false                                  |
+| ---------------- | ----------------------------------------------- | ------------------------------------------------ |
+| $\forall x P(x)$ | 對於所有在$P(x)$定義域中的$x$，$P(x)$都為true。 | 存在一個$x$使得$P(x)$為false                     |
+| $\exist x P(x)$  | 存在一個$x$使得$P(x)$為true                     | 對於所有在$P(x)$定義域中的$x$，$P(x)$都為false。 |
+
+
+
+##### Example 1
+
+令$P(x)$代表$x + 1 > x$，對於所有實數域中的$x$，$\forall x P(x)$的真值為何
+
+
+
+我們可以清楚知道，對於所有實數域中的$x$，$x+1$都大於$x$，找不到一個反例使的$x + 1 < x$，因此$\forall x P(x)$的真值為true。
+
+
+
+##### Example 2
+
+令$Q(x)$代表$x < 2$，對於所有實數域中的$x$，$\forall x P(x)$的真值為何
+
+
+
+當$Q(0), Q(1)$的時候$Q(x)$為true，但$Q(2)$為false，故$\forall x P(x)$為false。
+
+
+
+##### Example 3
+
+令$P(x)$代表$x^2 < 10$，求所有不超過4的正整數中，$\forall x P(x)$的真值為何
+
+
+
+我們可以把真值表達成$P(1) \and P(2) \and P(3) \and P(4)$
+
+但是$P(4)$為false，因為$4^2 < 10$
+
+所以$\forall x P(x)$為false。
+
+
+
+##### Example 4
+
+令$P(x)$代表$x^2 \ge x$，若$x$的定義域為所有實數，則$\forall x P(x)$的真值為何？
+
+若$x$的定義域為所有整數，那麼$\forall x P(x)$的真值又為何？
+
+
+
+我們可以找到一個反例，若$x = 0.5$，則$0.5^2 < 0.5$。
+
+故若$x$的定義域為所有實數，則$\forall x P(x)$的真值為false。
+
+但若$x$的定義域為所有整數，我們找不到任何一個反例能夠證明$\forall x P(x)$的真值為false。
+
+故若$x$的定義域為所有整數，$\forall x P(x)$的真值為true。
+
+
+
+#### Definition - 存在量化
+
+對於$P(x)$來說，存在量化的代表對於至少一個在$P$的定義域內的$x$，我們可以寫作$\exist x P(x)$，$\exist$符號代表存在量詞
+
+若不存在一個$x$，使得$P(x)$為true，則我們把他稱作$\exist x P(x)$的反例。
+
+
+
+##### Example 1
+
+令$P(x)$代表$x > 3$，若$x$的定義域為所有實數，則$\exist x P(x)$的真值為何？
+
+
+
+我們可以找到$x = 4$使得$x > 3$成立，故$\exist x P(x)$的真值為true。
+
+
+
+##### Example 2
+
+令$Q(x)$代表$x = x+1$，若$x$的定義域為所有實數，則$\exist x Q(x)$的真值為何？
+
+
+
+我們找不到任何一個實數，使得$x = x + 1$，故$\exist x Q(x)$為false。
+
+
+
+##### Example 3
+
+令$P(x)$代表$x^2 > 10$，若$x$的定義域為不超過4的正整數，則$\exist x P(x)$的真值為何？
+
+
+
+我們可以知道$x \in \{1, 2, 3, 4\}$
+
+所以我們可以寫成$P(1) \or P(2) \or P(3) \or P(4)$
+
+由於我們可以知道，$4^2 = 16 > 10$ ，因此$P(4)$為true
+
+故$P(1) \or P(2) \or P(3) \or P(4)$為true
+
+因此$\exist x P(x)$為true
+
+
+
+#### Introduce - 唯一量化
+
+我們可以使用$\exist !xP(x)$，用來表示「唯一一個」、「正好一個」、「剛好一個」$x$使得$P(x)$為真。
+
+例如，令$P(x)$代表$x - 2 = 4$，則$\exist ! xP(x)$成立，因為我們可以找到$x = 6$，使得$P(6)$為true
+
+除此之外我們找不到任何的$x$，使得$P(x)$為true，故$\exist ! xP(x)$為true。
+
+
+
+#### Introduce - 限定定義域的量詞
+
+通常來說， 我們可以透過縮寫，來表示定義域所需要符合的條件。
+
+例如說$\forall x > 0 (x^2 > x)$，且定義域為所有實數，則代表說，對於所有大於0的實數，使得$x^2 > x$。
+
+
+
+##### Example 
+
+若下列敘述的定義域皆為$x \in \mathbb{R}$，求$\forall x < 0 (x^2 > 0)$，$\forall y \neq 0 (y^3 \neq 0)$，還有$\exist z > 0 (z^2 = 2)$的意義。
+
+
+
+第一個例子，若$x < 0$，則$x^2 > 0$，則我們可以寫成$(x < 0) \rightarrow (x^2 > 0)$
+
+且所有的實數$x$都要符合這個敘述，因此$\forall x[(x < 0) \rightarrow (x^2 > 0)]$
+
+第二個例子，若$y \neq 0$，則$y^3 \neq 0$，則我們可以寫成$(y \neq 0) \rightarrow (y^3 \neq 0)$
+
+且所有的實數$y$都要符合這個敘述，因此$\forall y[(y\neq 0) \rightarrow (y^3\neq 0)]$
+
+第三個例子，若$z > 0$，則$z^2 = 2$，則我們可以寫成$(z > 0) \and (z^2 = 2)$
+
+且至少一個$z$都要符合這個敘述，因此$\exist z[(z > 0) \and (z^2 = 2)]$
+
+
+
+##### Introduce - 量詞的優先級
+
+$\forall$與$\exist$是所有邏輯符號中優先級最高的，也就是若$\forall x P(x) \or Q(x)$，他代表著$(\forall x P(x)) \or Q(x)$，而非$\forall x (P(x) \or Q(x))$
+
+
+
+#### Introduce - 綑綁變數
+
+如果量詞用在變數$x$上，則我們說變數$x$為一個綑綁變數，否則他就是自由變數。
+
+一個命題函數所有變數都必須為綑綁變數，則這個命題變數才會變成一命題。
+
+無論是存在量化、全稱量化都可以使用
+
+
+
+##### Example 1
+
+在敘述$\exist x (x + y = 1)$中，我們可以知道$x$是綑綁變數，因為前面的存在量詞是對$x$的
+
+但是沒有任何對$y$的量化，因此$y$為一個自由變數。
+
+
+
+##### Example 2
+
+在敘述$\exist x(P(x) \and Q(x)) \or \forall x R(x)$，所有的變數都是綑綁變數
+
+第一個存在量詞對括號內所有的$x$進行綑綁，而第二個存在量詞對命題函數$R$的變數$x$進行綑綁。
+
+
+
+##### Example 3
+
+在敘述$\exist x(P(x) \and Q(x)) \or \forall y R(y)$，所有變數都是綑綁變數
+
+第一個存在量詞對括號內所有的$x$進行綑綁，而第二個存在量詞對命題函數$R$的變數$y$進行綑綁。
+
+
+
+#### Introduce - 關於量化的邏輯等價
+
+##### Definition - 量化的邏輯等價
+
+關於量詞與謂語的邏輯等價，若兩邊敘述若為且若擁有相同的真值，則我們稱他為邏輯等價。
+
+不用考慮謂語如何替代敘述，或者在命題函數中的定義域為何。
+
+
+
+##### Example
+
+證明$\forall x (P(x) \and Q(x))$與$\forall P(x) \and \forall Q(x)$邏輯等價。
+
+
+
+若要證明$\forall x (P(x) \and Q(x))$與$\forall P(x) \and \forall Q(x)$邏輯等價
+
+則我們假設$a \in D(x)$，其中$D(x)$代表$x$的定義域，那麼如果$\forall x (P(x) \and Q(x))$是true，則$P(a) \and Q(a)$都為true。
+
+達成與邏輯為正的條件即為$P(a)$與$Q(a)$皆為true，則與邏輯才會成立。
+
+接著，假設$\forall x P(x) \and \forall x Q(x)$為true，且$a \in D(x)$
+
+那麼為了達成與邏輯的條件，$P(a)$應為true，$Q(a)$也應為true。
+
+故$P(a) \and Q(a)$應為true，而$a \in D(x)$，則代表所有在$D(x)$的變數$a$都可以使得$P(a) \and Q(a)$為true
+
+故我們可以把$a$改寫成$\forall x (P(x) \and Q(x))$
+
+因此，我們可以得知，$\forall x (P(x) \and Q(x))$與$\forall x P(x) \and \forall x Q(x)$邏輯等價。
+
+
+
+#### Introduce - 邏輯非的量化表達式
+
+##### Introduce - 全稱量化的邏輯非
+
+思考以下的敘述
+
+「在這間教室所有人都修過微積分」
+
+若我們利用謂語取代敘述的部分，則我們可以令$P(x)$為「$x$修過微積分」，而$x$的定義域限定為在這間教室的人
+
+故敘述可以表達成$\forall x P(x)$
+
+
+
+而若不是所有人都修過微積分，則必定在教室有一個人$x$使得$P(x)$為false。
+
+因此，我們可以表達成，若不是所有人都修過微積分，則我們可以用存在量化來表示
+
+也就是$\exist x \neg P(x)$
+
+
+
+因此，我們可以知道，$\neg(\exist x \neg P(x)) \equiv \forall x P(x)$
+
+兩邊邏輯等價同取邏輯非，則$\neg \neg (\exist x \neg P(x)) \equiv \neg \forall x P(x)$
+
+也就是$\exist x \neg P(x) \equiv \neg \forall x P(x)$
+
+
+
+##### Introduce - 存在量化的邏輯非
+
+思考以下敘述
+
+「在這間教室，至少有一個人修過微積分」
+
+若我們利用謂語取代敘述的部分，則我們可以令$P(x)$為「$x$修過微積分」，而$x$的定義域限定為在這間教室的人
+
+故敘述可以表達成$\exist x P(x)$
+
+
+
+而若不是至少有一個人修過微積分，則必定在定義域內所有的$x$都能使$\exist x P(x)$為false。
+
+因此，我們可以表達成，若沒有人修過微積分，則我們可以用全稱量化來表示
+
+也就是$\forall x \neg P(x)$
+
+
+
+因此我們可以知道，$\neg(\forall x \neg P(x)) \equiv \exist x P(x)$
+
+兩邊邏輯等價同取邏輯非，則$\neg \neg(\forall x \neg P(x)) \equiv \neg \exist x P(x)$
+
+也就是$\forall x \neg P(x) \equiv \neg \exist x P(x)$
+
+
+
+##### Table - 量化表達式的德摩根定律
+
+| 量化表達式       | 取邏輯非後的量化表達式 |
+| ---------------- | ---------------------- |
+| $\forall x P(x)$ | $\exist x \neg P(x)$   |
+| $\exist x P(x)$  | $\forall x \neg P(x)$  |
+
+
+
+##### Example
+
+求$\forall x(x^2 > x)$與$\exist x (x^2=2)$的反邏輯。
+
+
+
+對於所有的$x$，$x^2 > x$皆成立
+
+而他的反邏輯即為存在一個$x$使得$x^2 > x$不成立
+
+故我們可以寫成存在一個$x$使得$x^2 \le x$
+
+因此，$\neg \forall x(x^2 > x) \equiv \exist x (x^2 \le x)$
+
+
+
+存在一個$x$使得$x^2 = 2$成立
+
+而他的反邏輯即為使所有的$x$讓$x^2 = 2$不成立
+
+故我們可以寫成讓所有的$x$使得$x^2 \neq 2$
+
+因此，$\neg \exist x (x^2 = 2) \equiv \forall x (x^2 \neq 2)$
+
+$x$的值取決於定義域。
+
+
+
+### 1.5 嵌套限定詞
+
+#### Introduce - 嵌套量詞
+
+在1.4的章節，我們通常都只會用到一個量詞，而量詞是可以被嵌套的。
+
+舉個例子，就像這樣：$\forall x \exist y (x + y = 0)$，一層一層套上的量詞
+
+而我們也可以改個表達方式，令$Q(x)$為$\exist y P(x, y)$，而$P(x, y)$為$x+y = 0$
+
+則利用$\forall x Q(x)$，就能表達$\forall x \exist y (x + y = 0)$
+
+也就能表達在定義域$D(x)$內的所有$x$，都存在一個$y \in D(y)$使得$x + y = 0$
+
+
+
+#### Introduce - 嵌套量詞的順序
+
+##### Example 1
+
+若我們考慮$\forall x \forall y (x + y = y + x)$，則他唸起來會像
+
+「對於每一對的$(x, y)$，$\forall x \forall y (x + y = y + x)$均成立。」
+
+而若我們變換一下順序，寫作$\forall y \forall x (x + y = y + x)$，則他唸起來會像
+
+「對於每一對的$(y, x)$，$\forall y \forall x (x + y = y + x)$均成立。」
+
+因此，我們可以知道，兩個不同的全稱量詞對換是不會影響命題本身的。
+
+
+
+##### Example 2
+
+1. 若我們考慮$\exist x \forall y(x + y = 0)$，且$x, y$的定義域為所有實數
+
+   則他唸起來會像，存在一個$x$，使得每一種$y$都能符合$x + y = 0$
+
+   這個命題很明顯是false，因為不存在任何一個$x$，使得每一種$y$都能符合$x + y = 0$。
+
+2. 若我們考慮$\forall x \exist y (x + y = 0)$，且$x, y$的定義域為所有實數
+
+   則他唸起來會像，對於每一個屬於實數的$x$，存在一種$y$能符合$x + y = 0$
+
+   這個命題就會是true，因為只要使$y = -x$，就能使敘述成立。
+
+因此，兩者對調是會影響命題本身的。
+
+
+
+##### Example 3
+
+令$Q(x, y, z)$代表敘述$x + y = z$，若$x, y, z$的定義域為所有實數，試求$\forall x \forall y \exist z Q(x, y, z)$和$\exist z \forall x \forall y Q(x, y, z)$的真值。
+
+1. 若我們考慮$\forall x \forall y \exist z Q(x, y, z)$，則他唸起來會像，對於所有的$x$與所有的$y$，存在一個$z$，使得$x + y = z$
+
+   這樣是合理的，無論$x$與$y$的值為多少，兩個實數相加必定為另一個實數，故$\forall x \forall y \exist z Q(x, y, z)$的真值為true
+
+2. 若我們考慮$\exist z \forall x \forall y Q(x, y, z)$，則他唸起來會像，存在一個$z$使得對於所有的$(x, y)$，都能符合$x + y = z$
+
+   這樣是不合理的，因為找不到一種$z$，使得任意的$(x, y)$對符合$x + y = z$，故$\exist z \forall x \forall y Q(x, y, z)$的真值為false
+   
+
+綜合上述，兩者的量詞互換，會影響到命題的結果。
+
+
+
+##### Table - 兩個嵌套量詞的意義
+
+![image-20210304225538828](https://i.imgur.com/Aqo4GLE.png)
+
+
+
+#### Introduce - 嵌套量詞的負邏輯
+
+負邏輯一樣可以用在嵌套量詞上。
+
+##### Example 
+
+請找出$\forall x \exist y (xy = 1)$的負邏輯命題
+
+
+
+命題翻譯會變成，對於所有的$x$，存在一個$y$使得$xy = 1$
+
+那麼對於這個命題加上負邏輯，則變成了存在一個$x$，使得所有可能的$y$，讓$xy = 1$不成立。
+
+故我們可以寫成$\exist x \forall y \neg(xy = 1)$
+
+而$\neg(xy = 1)$又可以寫成$(xy \neq 1)$
+
+故整個式子可以寫成$\exist x \forall y (xy \neq 1)$
 
