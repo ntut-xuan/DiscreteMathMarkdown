@@ -1112,3 +1112,77 @@ $x$的值取決於定義域。
 
 故整個式子可以寫成$\exist x \forall y (xy \neq 1)$
 
+
+
+### 1.6 推論規則
+
+#### Introduce - 肯定前件
+
+若$P \equiv T$，且$P \rightarrow Q \equiv T$，則$Q \equiv T$
+
+
+
+#### Introduce - 否定後件
+
+若$\neg Q \equiv T$，且$P \rightarrow Q \equiv T$，則$\neg P \equiv T$
+
+
+
+#### Introduce - 三段論證
+
+若$P \rightarrow Q \equiv T$，且$Q \rightarrow R \equiv T$，則$P \rightarrow R \equiv T$
+
+
+
+#### Introduce - 選言三段論
+
+若$P \or Q \equiv T$，且$\neg P \equiv T$，則$Q \equiv T$
+
+
+
+#### Introduce - 添加律
+
+若$P \equiv T$，則$P \or Q \equiv T$
+
+
+
+#### Introduce - 簡化律
+
+若$P \and Q  \equiv T$，則$P \equiv T$
+
+
+
+#### Introduce - 連言
+
+若$P \equiv T$，且$Q \equiv T$，則$P \and Q \equiv T$
+
+
+
+#### Introduce - 預解律
+
+若$P \or Q \equiv T$，且$\neg P \or R \equiv T$，則$Q \or R \equiv T$
+
+
+
+#### Introduce - 全稱實例化
+
+若$\forall x P(x) \equiv T$，則若$c \in D(x)$，則$P(c) \equiv T$
+
+
+
+#### Introduce - 全稱普遍化
+
+若$c \in D(x)$，且$P(c) \text{ for an arbitrary c}$，則$\forall x P(x) \equiv T$
+
+
+
+#### Introduce - 存在實例化
+
+若$\exist x P(x) \equiv T$，則$P(c) \equiv T \text{ for some element c}$
+
+
+
+#### Introduce - 存在普遍化
+
+若$P(c) \equiv T \text{ for some element c}$，則$\exist x P(x) \equiv T$
+
