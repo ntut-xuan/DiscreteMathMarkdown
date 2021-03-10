@@ -1122,9 +1122,29 @@ $x$的值取決於定義域。
 
 
 
+##### Example
+
+你考到了100分。
+
+若你考到100分，就會得到A。
+
+所以，你會得到A。
+
+
+
 #### Introduce - 否定後件
 
 若$\neg Q \equiv T$，且$P \rightarrow Q \equiv T$，則$\neg P \equiv T$
+
+
+
+##### Example
+
+你沒有得到A。
+
+若你考到100分，就會得到A。
+
+所以你沒有考到100分。
 
 
 
@@ -1134,9 +1154,29 @@ $x$的值取決於定義域。
 
 
 
+##### Example
+
+若你難過，就吃東西
+
+若你吃東西，就可能會變胖
+
+所以你難過就可能會變胖。
+
+
+
 #### Introduce - 選言三段論
 
 若$P \or Q \equiv T$，且$\neg P \equiv T$，則$Q \equiv T$
+
+
+
+##### Example
+
+我要嘛選擇睡覺，要嘛選擇讀書。
+
+我沒在睡覺。
+
+所以我在讀書。
 
 
 
@@ -1146,9 +1186,25 @@ $x$的值取決於定義域。
 
 
 
+##### Example
+
+若我在睡覺。
+
+所以我可能在睡覺或者在讀書。
+
+
+
 #### Introduce - 簡化律
 
 若$P \and Q  \equiv T$，則$P \equiv T$
+
+
+
+##### Example
+
+外面是晚上而且外面在下雨
+
+所以外面是晚上。
 
 
 
@@ -1158,9 +1214,29 @@ $x$的值取決於定義域。
 
 
 
+##### Example
+
+外面是晚上。
+
+外面在下雨。
+
+所以外面是晚上，而且外面在下雨。
+
+
+
 #### Introduce - 預解律
 
 若$P \or Q \equiv T$，且$\neg P \or R \equiv T$，則$Q \or R \equiv T$
+
+
+
+##### Example
+
+外面是晚上或者外面在下雨。
+
+且外面是白天或者外面在放晴。
+
+則外面在下雨或者外面在放晴。
 
 
 
@@ -1170,9 +1246,29 @@ $x$的值取決於定義域。
 
 
 
+##### Example
+
+所有資工系的學生都修過微積分
+
+若小碩是資工系的學生
+
+則小碩修過微積分
+
+
+
 #### Introduce - 全稱普遍化
 
 若$c \in D(x)$，且$P(c) \text{ for an arbitrary c}$，則$\forall x P(x) \equiv T$
+
+
+
+##### Example
+
+若小碩是資工系的學生
+
+所有資工系的學生都修過微積分
+
+則小碩修過微積分
 
 
 
@@ -1185,4 +1281,233 @@ $x$的值取決於定義域。
 #### Introduce - 存在普遍化
 
 若$P(c) \equiv T \text{ for some element c}$，則$\exist x P(x) \equiv T$
+
+
+
+### 1.7 Introduce to proof
+
+#### Introduce - 定理
+
+定理是一個可以被證明的敘述。
+
+
+
+#### Introduce - 公理
+
+公理是一個不需要證明，假設正確的敘述。
+
+
+
+##### Example
+
+$\forall x,y \in \mathbb{R}$，$x + y \in \mathbb{R}$是一個公理。
+
+
+
+#### Introduce - 引理
+
+引理是較不重要的敘述，用來協助證明其他的結果。
+
+
+
+#### Introduce - 系理
+
+系理是一個定理，由另一個定理推導出另一個顯而易見的定理。
+
+
+
+#### Introduce - 猜想/假說
+
+猜想(假說)是一個定理，被提出但沒有人能夠證明正確與否。
+
+
+
+##### Example
+
+費馬大定理：$x^n + y^n = z^n$
+
+當$n \in \mathbb{Z}$且$n > 2$時，$(x, y, z)$沒有整數解。
+
+
+
+#### Example
+
+試證明，若$n \in odd$，則$n^2 \in odd$
+
+我們可以寫成$\forall n (P(n) \rightarrow Q(n))$，$P(n)$代表$n$是奇數，而$Q(n)$代表$n^2$是奇數。
+
+假設$n \in odd$，則$n = 2k+1, k \in \mathbb{Z}$
+
+則$n^2 = (2k + 1)^2 = 4k^2 + 4k + 1 = 2(2k^2 + 2k) + 1$
+
+則我們可以知道$2k^2+2k$必定是某個整數
+
+由於偶數乘以任何整數均為偶數，故偶數+1必為奇數
+
+故$n^2$必為奇數。
+
+
+
+#### Introduce - 反證法
+
+若$P \rightarrow Q$證明較為困難，則證明與$P \rightarrow Q$等價的$\neg Q \rightarrow \neg P$。
+
+
+
+##### Example
+
+試證明，若$n \in \mathbb{Z}$，且$3n + 2$是奇數，則$n$是奇數。
+
+
+
+我們可以寫成$\forall n (P(n) \rightarrow Q(n))$，$P(n)$代表$3n+2$是奇數，$Q(n)$代表$n$是奇數。
+
+則我們利用反證法，證明$\forall n(\neg Q(n) \rightarrow \neg P(n))$，也就是證明對於所有的整數$n$，若$n$是偶數，則$3n+2$是偶數。
+
+則$n$可以寫成$2k$的形式，因此$3n + 2 = 6k + 2$，$k \in \mathbb{Z}$
+
+由於偶數乘以任何整數均為偶數，且偶數加上任何偶數均為偶數
+
+故我們可以證明，若$n$是偶數，則$3n+2$是偶數。
+
+故若$n \in \mathbb{Z}$，且$3n + 2$是奇數，則$n$是奇數。
+
+
+
+#### Introduce - 空泛證明
+
+若$P \equiv F$，則證明完成。
+
+
+
+##### Example
+
+試證明，如果$0 > 1$，則$0^2 > 0$
+
+
+
+我們可以寫成$P \rightarrow Q$，其中$P$為$0 > 1$，且$Q$為$0^2 > 0$
+
+但$P \equiv F$，則$Q$不可能發生，證畢。
+
+
+
+#### Introduce - 平庸證明
+
+若$Q \equiv T$，則證明完成。
+
+
+
+##### Example
+
+設$a, b \in \mathbb{Z}$，若$a \ge b$，則$a^0 \ge b^0$
+
+
+
+我們可以寫成$\forall a \forall b(P(a, b) \rightarrow Q(a,b))$，其中$P(a, b)$為$a \ge b$，且$Q(a, b)$為$a^0 \ge b^0$
+
+則由於無論$a, b$為何，$a^0 = b^0$，故$\forall a \forall b Q(a, b) \equiv T$，故$\forall a \forall b(P(a, b) \rightarrow Q(a,b)) \equiv T$
+
+
+
+#### Introduce - 歸謬證明法
+
+有兩種用途
+
+| 用途                      | 假設                          | 矛盾                            |
+| ------------------------- | ----------------------------- | ------------------------------- |
+| $P$ is true               | $\neg P$ is true              | $\neg P \rightarrow F$          |
+| $P \rightarrow Q$ is true | $P$ is true, $\neg Q$ is true | $(P \and \neg Q) \rightarrow F$ |
+
+
+
+### 1.8 Exhaustive Proof
+
+#### Example 1
+
+$(n + 1)^3 \ge 3$，$n \in \mathbb{Z}^+, n \le 4$
+
+
+
+若$n = 1$，則$2^3 = 8 \ge 3$，
+
+若$n = 2$，則$3^3 = 27 \ge 3$
+
+若$n = 3$，則$4^3 = 64 \ge 3$
+
+若$n = 4$，則$5^3 = 125 \ge 3$
+
+故$(n + 1)^3 \ge 3$成立。
+
+
+
+#### Example 2
+
+若$n \in \mathbb{Z}$，則$n^2 \ge n$
+
+
+
+設$\forall n P(n)$代表對於所有實數$n$，$n^2 \ge n$
+
+分成三個case分開做處理。
+
+$n = 0$，$0 = 0$，故$P(0)$成立。
+
+$n \ge 1$，已知$n \ge 1$，則兩邊同乘以$n^2 \ge n$，故$n^2 \ge n$成立。
+
+$n \le 1$，已知$n^2 \ge 0$，故$n^2 \ge n$
+
+故$\forall n P(n)$成立
+
+
+
+#### Introduce - 建構式證明
+
+建構式證明可以分成存在證明或不存在證明。
+
+
+
+##### Example 1
+
+請證明可以找到一個整數，這個整數可以用兩個以上不同的立方和所組成。
+
+
+
+我們可以找到一個數字$1729$，且$1729 = 10^3 + 9^3$且$1729 = 12^3 + 1^3$，故證明完畢。
+
+
+
+##### Example 2
+
+請證明可以找到一個無理數$x$與$y$，使得$x^y$為有理數。
+
+
+
+分成兩個case
+
+若$\sqrt{2}^\sqrt{2}$是有理數，則$x = \sqrt{2}, y = \sqrt{2}$
+
+若$\sqrt{2}^\sqrt{2}$是無理數，則$x = \sqrt{2}^\sqrt{2}, y = \sqrt{2}$，$x^y = \sqrt{2}^{\sqrt{2}\cdot \sqrt{2}} = \sqrt{2}^2 = 2$
+
+則這兩者其中之一可以符合命題。
+
+
+
+#### Introduce - 存在證明
+
+存在一個$x$，使得$P(x)$為true，且除了$x$以外的$y$，使得$P(x)$為false。
+
+$\exist x (P(x) \and \forall y (y \neq x \rightarrow \neg P(y)))$
+
+
+
+#### Introduce - 反例
+
+##### Example
+
+試證明，每個正整數，是三個整數的平方和。
+
+
+
+若正整數為$1$，則我們找不到任意一組$(x, y, z) \in \mathbb{Z}$，使得$x^2 +  y^2 + z^2 = 1$，故假說錯誤。
 
