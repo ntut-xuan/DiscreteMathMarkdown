@@ -1511,3 +1511,178 @@ $\exist x (P(x) \and \forall y (y \neq x \rightarrow \neg P(y)))$
 
 若正整數為$1$，則我們找不到任意一組$(x, y, z) \in \mathbb{Z}$，使得$x^2 +  y^2 + z^2 = 1$，故假說錯誤。
 
+
+
+## 2. Basic Structures: Sets, Functions, Sequences, Sums, and Matrices
+
+### 2.1 Sets
+
+#### Definition - 1
+
+A set is unordered collection of distinct objects, called elements or members of the set.
+
+$a \in A$, $a$ is an element of $A$.
+
+$a \not \in A$, $a$ is not an element of $A$.
+
+##### Example
+
+$\{a, b\} = \{b, a\}$
+
+$\text{{a, a, b}} = \text{{a, b}}$
+
+$(a, b) \neq (b, a)$
+
+
+
+#### Introduce -  Roster
+
+##### Example 1
+
+The set of all vowels in  English alphabet.
+
+$V = \{a, e, i, o, u\}$
+
+
+
+##### Example 2
+
+The set of positive integers less than 100.
+
+$\text{{1, 2, 3, ... 99, 100}}$
+
+
+
+#### Introduce - Set Builder Notation
+
+$\text{{x | x has property P}}$, is read "the set of all x such that x has property P".
+
+
+
+##### Example 1
+
+The set of all odd positive integers less than 10.
+
+$O =  \{1, 3, 5, 7, 9...\}$
+
+$O = \text{{x | x is an odd positive integers less than 10}}$
+
+$O = \{{2x+1\ |\ 0 \le x \le 4}\}$
+
+
+
+##### Example 2
+
+The set $\mathbb{Q}^+$ of all positive rational integers.
+
+$\mathbb{Q}^+ = \{{x\in\mathbb{R}\ |\ x = \dfrac{a}{b}\text{ for some positive integers p and q.}}\}$
+
+
+
+##### Example 3
+
+The set of all natural integers.
+
+$\mathbb{N} = \{0, 1, 2, 3, ...\}$
+
+
+
+##### Example 4
+
+The set of all integers.
+
+$\mathbb{Z} = \{..., -2, -1, 0, 1, 2, ...\}$
+
+
+
+##### Example 5
+
+The set of all positive integers.
+
+$\mathbb{Z}^+ = \{0, 1, 2, ...\}$
+
+
+
+##### Example 6
+
+The set of all rational numbers.
+
+$\mathbb{Q} = \{\dfrac{p}{q}\ |\ p \in \mathbb{Z}, q \in \mathbb{Z}, q \neq 0\}$
+
+
+
+#### Definition - 2
+
+Two sets are equal if and only if they have the same elements.
+
+$A = B \iff (x \in A \rightarrow x \in B)$
+
+
+
+##### Example
+
+$\{1, 3, 5\} = \{3, 5, 1\}$
+
+$\{1, 3, 3, 3, 5, 5, 5, 5\} = \{1, 3, 5\}$
+
+
+
+#### Definition - 3
+
+Empty Set has no element, $\varnothing$
+
+
+
+#### Definition - 4
+
+Singleton Set has only one element.
+
+$\{\varnothing\}$
+
+
+
+#### Introduce - Venn Diagrams
+
+![image-20210315095124977](https://i.imgur.com/U69Rj6V.png)
+
+$U = \text{{a, b, c, d, e, f, g ...}}$
+
+$V = \text{{a, e, i, o, u}}$
+
+
+
+#### Definition - 5
+
+The set $A$ is a subset of set $B$, $B$ is a superset of set $A$ iff every element of $A$ is also an element of $B$.
+
+$A \subseteq B$, $B \supseteq A$
+
+$\forall x(x \in A \rightarrow x \in B)$
+
+
+
+#### Theorem - 1
+
+For every set $S$, $\varnothing \subseteq S$, $S \subseteq S$
+
+$\{\} \subseteq \{\}$
+
+$\{\} \subseteq \{a\}$
+
+$\{a\} \subseteq \{a\}$
+
+$\{\} \subseteq \{a, b\}$
+
+$\{a\} \subseteq \{a, b\}$
+
+$\{b\} \subseteq \{a, b\}$
+
+$\{a, b\} \subseteq \{a, b\}$
+
+If the set have $n$ element, it will have $n!$ different subset.
+
+
+
+#### Introduce - Proper Subset
+
+$A \subset B \iff \forall x(x \in A \rightarrow x \in B) \and \exist x(x \in B \and x \not \in A)$
