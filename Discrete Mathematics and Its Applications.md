@@ -1513,17 +1513,19 @@ $\exist x (P(x) \and \forall y (y \neq x \rightarrow \neg P(y)))$
 
 
 
-## 2. Basic Structures: Sets, Functions, Sequences, Sums, and Matrices
+## 2. 基礎結構: 集合、函數、序列、總和、與矩陣
 
-### 2.1 Sets
+### 2.1 集合
 
-#### Definition - 1
+#### Definition - 集合
 
-A set is unordered collection of distinct objects, called elements or members of the set.
+集合是一個不需按照順序排列，且集合內部所有元素均不相等的物件。
 
-$a \in A$, $a$ is an element of $A$.
+$a \in A$, $a$ 是集合 $A$ 的元素之一。
 
-$a \not \in A$, $a$ is not an element of $A$.
+$a \not \in A$, $a$ 不是集合 $A$ 的元素之一。
+
+
 
 ##### Example
 
@@ -1535,11 +1537,15 @@ $(a, b) \neq (b, a)$
 
 
 
-#### Introduce -  Roster
+#### Introduce -  窮舉法
+
+如果窮舉出集合內的所有物件是可能的，我們可以窮舉出集合內的所有物件。
+
+
 
 ##### Example 1
 
-The set of all vowels in  English alphabet.
+所有母音的集合。
 
 $V = \{a, e, i, o, u\}$
 
@@ -1547,21 +1553,21 @@ $V = \{a, e, i, o, u\}$
 
 ##### Example 2
 
-The set of positive integers less than 100.
+所有小於100的正整數的集合。
 
-$\text{{1, 2, 3, ... 99, 100}}$
+$O = \text{{1, 2, 3, ... 99, 100}}$
 
 
 
-#### Introduce - Set Builder Notation
+#### Introduce - 集合建構式符號
 
-$\text{{x | x has property P}}$, is read "the set of all x such that x has property P".
+$\text{{x | x has property P}}$，念作「所有符合條件$P$元素$x$的集合」。
 
 
 
 ##### Example 1
 
-The set of all odd positive integers less than 10.
+所有小於10的正整數奇數集合。
 
 $O =  \{1, 3, 5, 7, 9...\}$
 
@@ -1573,7 +1579,7 @@ $O = \{{2x+1\ |\ 0 \le x \le 4}\}$
 
 ##### Example 2
 
-The set $\mathbb{Q}^+$ of all positive rational integers.
+所有正的有理數，且為整數的集合$\mathbb{Q}^+$。
 
 $\mathbb{Q}^+ = \{{x\in\mathbb{R}\ |\ x = \dfrac{a}{b}\text{ for some positive integers p and q.}}\}$
 
@@ -1581,7 +1587,7 @@ $\mathbb{Q}^+ = \{{x\in\mathbb{R}\ |\ x = \dfrac{a}{b}\text{ for some positive i
 
 ##### Example 3
 
-The set of all natural integers.
+所有自然數的整數集合。
 
 $\mathbb{N} = \{0, 1, 2, 3, ...\}$
 
@@ -1589,7 +1595,7 @@ $\mathbb{N} = \{0, 1, 2, 3, ...\}$
 
 ##### Example 4
 
-The set of all integers.
+所有整數的集合。
 
 $\mathbb{Z} = \{..., -2, -1, 0, 1, 2, ...\}$
 
@@ -1597,7 +1603,7 @@ $\mathbb{Z} = \{..., -2, -1, 0, 1, 2, ...\}$
 
 ##### Example 5
 
-The set of all positive integers.
+所有正整數的集合。
 
 $\mathbb{Z}^+ = \{0, 1, 2, ...\}$
 
@@ -1605,15 +1611,15 @@ $\mathbb{Z}^+ = \{0, 1, 2, ...\}$
 
 ##### Example 6
 
-The set of all rational numbers.
+所有有理數的集合。
 
 $\mathbb{Q} = \{\dfrac{p}{q}\ |\ p \in \mathbb{Z}, q \in \mathbb{Z}, q \neq 0\}$
 
 
 
-#### Definition - 2
+#### Definition - 集合相等
 
-Two sets are equal if and only if they have the same elements.
+若兩個集合的所有元素相等，則我們說這兩個集合相等。
 
 $A = B \iff (x \in A \rightarrow x \in B)$
 
@@ -1627,23 +1633,33 @@ $\{1, 3, 3, 3, 5, 5, 5, 5\} = \{1, 3, 5\}$
 
 
 
-#### Definition - 3
+#### Definition - 空集合
 
-Empty Set has no element, $\varnothing$
-
-
-
-#### Definition - 4
-
-Singleton Set has only one element.
-
-$\{\varnothing\}$
+空集合沒有任何元素，寫作 $\varnothing$。
 
 
 
-#### Introduce - Venn Diagrams
+#### Definition - 單元素集合
 
-![image-20210315095124977](https://i.imgur.com/U69Rj6V.png)
+單元素集合只有一個元素。
+
+
+
+##### Example
+
+$\{\varnothing\}$ 是一個單元素集合。
+
+
+
+#### Introduce - 文氏圖
+
+我們可以用文氏圖來表示一個集合。
+
+
+
+##### Example
+
+![image-20210315095124977](https://i.imgur.com/uouK3oM.png)
 
 $U = \text{{a, b, c, d, e, f, g ...}}$
 
@@ -1651,19 +1667,17 @@ $V = \text{{a, e, i, o, u}}$
 
 
 
-#### Definition - 5
+#### Definition - 子集合
 
-The set $A$ is a subset of set $B$, $B$ is a superset of set $A$ iff every element of $A$ is also an element of $B$.
+若為且若集合$A$的每個元素都為集合$B$的元素，則我們說$A$是$B$的子集合，且$B$為$A$的父集合。
 
-$A \subseteq B$, $B \supseteq A$
-
-$\forall x(x \in A \rightarrow x \in B)$
+可以表示成$(A \subseteq B \and B \supseteq A) \iff \forall x(x \in A \rightarrow x \in B)$
 
 
 
 #### Theorem - 1
 
-For every set $S$, $\varnothing \subseteq S$, $S \subseteq S$
+對於每一個集合 $S$, $\varnothing \subseteq S$, $S \subseteq S$
 
 $\{\} \subseteq \{\}$
 
@@ -1679,10 +1693,196 @@ $\{b\} \subseteq \{a, b\}$
 
 $\{a, b\} \subseteq \{a, b\}$
 
-If the set have $n$ element, it will have $n!$ different subset.
+如果一個集合有$n$個元素，則他會有$n!$種不同的子集合。
 
 
 
-#### Introduce - Proper Subset
+#### Introduce - 真子集
 
-$A \subset B \iff \forall x(x \in A \rightarrow x \in B) \and \exist x(x \in B \and x \not \in A)$
+若$A$是$B$的真子集，則對於所有在集合$A$的$x$也都在集合$B$，且$B$存在一個元素不在集合$A$。
+
+可以寫作，$A \subset B \iff \forall x(x \in A \rightarrow x \in B) \and \exist x(x \in B \and x \not \in A)$。
+
+
+
+#### Definition - 有限集合與無限集合
+
+如果一個集合有剛好$n$個元素，且$n$存在，則我們說這個集合是有限的，否則這個集合是無限的。
+
+
+
+#### Definition - 集合的勢
+
+若有一個集合$A$，我們定義「集合的勢」為集合內部的元素數量，寫作$|A|$。
+
+
+
+##### Example 1
+
+$|\varnothing| = 0$
+
+
+
+##### Example 2
+
+令集合$S$為擁有所有字母的集合，則$|S| = 26$
+
+
+
+##### Example 3
+
+$|\{1, 2, 3\}| = 3$
+
+
+
+##### Example 4
+
+$|\{\varnothing\}|= 1$
+
+
+
+##### Example 5
+
+若$S$為所有整數的集合，則$|S|$為無限。
+
+
+
+#### Introduce - 冪集
+
+若存在一個集合有集合$A$的所有子集，我們寫作$\wp(A)$。
+
+如果集合$A$有$N$個元素，則$|\wp(A)| = 2^N$。
+
+
+
+##### Example
+
+若$A=\{a, b\}$，則$\wp(A) = \{\{\varnothing\}, \{a\}, \{b\}, \{a, b\}\}$
+
+
+
+#### Introduce - 多元組
+
+- 一個有序且長度為$n$的多元組包含了元素$(a_1, a_2, a_3, ... a_n)$，且$a_1$是第一個元素，$a_n$是最後一個元素。
+
+- 兩個長度為$n$的多元組$A, B$，我們先用$A_i$表示多元組$A$的第$i$個元素。
+
+  若兩個多元組的每一項都相同，也就是$A_1 = B_1, A_2 = B_2, ... ,A_n = B_n$，則兩個多元組就是相同的。
+
+- 長度為$2$的多元組我們稱作有序對。
+- 若有兩個有序對$(a, b)$與$(c, d)$，則若$a = c$且$b = d$，則兩個有序對才相同。
+
+
+
+##### Example
+
+若有兩個長度為$n$的多元組$A, B$。
+
+$A = (1, 2, 3, 4, 5)$，$B = (5, 4, 3, 2, 1)$，則$A \neq B$
+
+$A = (1, 2, 3, 4, 5)$，$B = (1, 2 ,3, 4)$，則$A \neq B$
+
+$A = (1, 2, 3, 4, 5)$，$B = (1, 2 ,3, 4, 5)$，則$A = B$
+
+
+
+#### Introduce - 笛卡兒積
+
+兩個集合$A, B$相乘，我們稱作笛卡爾積，寫作$A \times B$。
+
+$A \times B$是一個集合，包含了所有不同的有序對$(a, b)$，其中$a \in A$，$b \in B$
+
+我們可以寫成這樣：$A \times B = \{(a, b) | a \in A \and b \in B\}$
+
+
+
+##### Example
+
+若集合$A = \{a, b\}$，集合$B = \{1, 2\}$
+
+則$A \times B = \{(a, 1), (a, 2), (b, 1), (b, 2)\}$
+
+
+
+#### Introduce - 笛卡兒積的子集合
+
+在笛卡爾積的子集合$R$，我們可以說與集合$A$和集合$B$都有關係。
+
+
+
+#### Introduce - 多個集合的笛卡兒積
+
+若我們有$m$個集合$A_1, A_2, A_3, ..., A_M$，則笛卡爾積寫作$A_1 \times A_2 \times  ...\times A_M$。
+
+則$A_1 \times A_2 \times  ...\times A_M = (a_1, a_2, ... ,a_n)$，為一個有序多元組的集合，其中$a_i \in A_i, i = 1, 2, ..., n$。
+
+
+
+##### Example
+
+若$A = \{0, 1\}$，$B = \{1, 2\}$，$C = \{0, 1, 2\}$，求$A \times B \times C$
+
+
+
+$A × B × C = \{(0,1,0), (0,1,1), (0,1,2),(0,2,0), (0,2,1), (0,2,2),(1,1,0), (1,1,1), (1,1,2), (1,2,0), (1,2,1), (1,2,2)\}$
+
+
+
+#### Introduce - 量詞的真值集
+
+給定一個量詞$P$與定義域$D$，我們定義量詞$P$的真值集為所有使得$P$為true且在定義域$D$的元素。
+
+我們可以把真值集寫作$\{x \in D | P(x)\}$。
+
+
+
+##### Example
+
+給定定義域$D$為所有整數與$P(x)$為$|x| = 1$，找出$P(x)$的真值集。
+
+則$P(x)$的真值集為$\{-1, 1\}$。
+
+
+
+### 2.2 集合運算子
+
+#### Introduce - 聯集
+
+$A$與$B$為集合，若$A$與$B$取聯集，則我們可以表示成$A \cup B = \{x | x \in A \or x \in B\}$。
+
+![image-20210318201511613](https://i.imgur.com/4E0HEfG.png)
+
+
+
+##### Example
+
+若$A = \{1, 2, 3\}$，且$B = \{3, 4, 5\}$，則$A \cup B = \{1, 2, 3, 4, 5\}$
+
+
+
+
+
+#### Introduce - 交集
+
+$A$與$B$為集合，若$A$與$B$取交集，則我們可以表示成$A \cap B = \{x | x \in A \and x \in B\}$
+
+![image-20210318201634099](https://i.imgur.com/8kYIVY9.png)
+
+如果$A \cap B = \varnothing$，則$A$與$B$的關係為互斥的。
+
+
+
+##### Example 1
+
+若$A = \{1, 2, 3\}$，且$B = \{3, 4, 5\}$，則$A \cap B = \{3\}$
+
+
+
+##### Example 2
+
+若$A = \{1, 2, 3\}$，且$B = \{4, 5, 6\}$，則$A \cap B = \varnothing$
+
+
+
+
+
