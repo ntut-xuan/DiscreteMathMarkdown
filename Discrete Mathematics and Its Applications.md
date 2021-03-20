@@ -1884,5 +1884,176 @@ $A$與$B$為集合，若$A$與$B$取交集，則我們可以表示成$A \cap B =
 
 
 
+#### Introduce - 補集
 
+令$A$是一個集合，則$A$的補集(通常叫做宇集$U$)，寫作$\overline{A}$，為$U - \overline{A}$的集合。
+
+定義為$\overline{A} = \{x \in U | x \not \in A\}$
+
+$A$的補集有時表示成$A^c$。
+
+
+
+##### Example
+
+如果宇集$U$代表小於$100$的正整數，則求$\{x | x > 70\}$的補集。
+
+
+
+$\{x | x \le 70\}$
+
+
+
+#### 
+
+#### Introduce - 差集
+
+令$A$與$B$為一個集合。
+
+$A$與$B$的差集，可以表示成$A - B$，代表集合$A$不包含集合$B$的東西。
+
+可以被定義為$A - B = \{x | x \in A \and x \not \in B\} = A \cap \overline{B}$
+
+
+
+##### Example
+
+令$A = \{1, 2, 3\}$，$B = \{3, 4, 5\}$，求$A - B$
+
+
+
+$A - B = \{1, 2\}$
+
+
+
+#### Introduce - 兩個集合交集的勢
+
+利用排容原理。
+
+$|A \cup B| = |A| + |B| - |A \cap B|$
+
+
+
+##### Example
+
+令$A = \{1, 2, 3\}$，$B = \{3, 4, 5\}$，求$|A \cup B|$
+
+
+
+$|A \cup B| = |A| + |B| - |A \cap B| = |3| + |3| - |5| = 1$
+
+
+
+#### Introduce - 對稱差
+
+若有兩個集合$A$與$B$，則$A$與$B$的對稱差寫作$A \oplus B$。
+
+定義為$A \oplus B = (A-B) \cup (B-A)$
+
+
+
+##### Example
+
+若$U = \{0, 1 ,2, 3, 4, 5, 6, 7, 8, 9\}$，$A = \{1, 2, 3, 4, 5\}$，$B = \{3, 4, 5, 6, 7\}$，求$A \oplus B$
+
+
+
+$A \oplus B = (A - B) \cup (B - A) = \{1, 2\} \cup \{6, 7\} = \{1, 2, 6, 7\}$
+
+
+
+#### Introduce - 集合特徵
+
+- 恆等律
+  - $A \cup \varnothing = A$，$A \cap U = A$
+- 支配律
+  - $A \cup U = U$，$A \cap \varnothing = \varnothing$
+- 冪等律
+  - $A \cup A = A$，$A \cap A = A$
+- 補餘律
+  - $\overline{(\overline{A})} = A$
+- 交換律
+  - $A \cup B = B \cup A$，$A \cap B = B \cap A$
+- 連鎖律
+  - $A \cup (B \cup C) = (A \cup B) \cup C$
+  - $A \cap (B \cap C) = (A \cap B) \cap C$
+- 分配律
+  - $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$
+  - $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$
+- 德摩根定律
+  - $\overline{A \cup B} = \overline{A} \cap \overline{B}$，$\overline{A \cap B} = \overline{A} \cup \overline{B}$
+- 吸收律
+  - $A \cap (A \cup B) = A$，$A \cap (A \cup B) = A$
+- Complement laws
+  - $A \cup \overline{A} = U$，$A \cap \overline{A} = \varnothing$
+
+### 2.3 函數
+
+#### Definition - 函數
+
+令$A$與$B$為一個非空集合，一個函數從$A$映射$B$，寫作$A \rightarrow B$。
+
+代表每一個集合$A$的元素都剛好指向一個集合$B$的元素，寫作$f(a) = b$。
+
+其中$b$為集合$B$的相異元素，被集合$A$的元素所映射。
+
+
+
+#### Introduce - 笛卡耳積的函數
+
+一個$A \rightarrow B$，可以用來表示$A \times B$的子集合，寫作
+
+$\forall x(x \in A \rightarrow \exist y(y \in B \and (x, y) \in f))$
+
+以及
+
+$\forall x, y_1, y_2[[(x, y_1) \in f \and (x, y_2) \in f] \rightarrow y_1 = y_2]$
+
+
+
+#### Introduce - 映射、像與原像
+
+給你一個集合$A$與集合$B$，我們說$f$是由$A$映射$B$所組成，則
+
+$A$被稱為$f$的定義域
+
+$B$被稱為$f$的值域
+
+如果$f(a) = b$，則$b$被稱為$f$在$a$的像，$a$被稱為$b$的像原
+
+當兩個函數有相同的定義域，相同的域值，還有兩個函數的像與像原映射相同，則兩個函數相同。
+
+
+
+#### Introduce - 單射
+
+函數$f$被稱做一對一函數，或者稱做單射，也就是對於所有在定義域的$a, b$，若為且若$f(a) = f(b)$，則$a = b$。
+
+函數$f$如果是一對一函數，則這個函數是個單射函數。
+
+
+
+#### Introduce - 滿射
+
+若有兩集合$A, B$，若為且若所有元素$b \in B$，存在一個$a \in A$，使得$f(a) = b$，則稱做這個函數為滿射函數。
+
+
+
+#### Introduce - 對射
+
+若一個函數是一對一函數，且函數滿射，則我們稱作這個函數是一對一對應函數或叫做對射函數。
+
+
+
+#### Introduce - 反函數
+
+令$f$是一個集合$A$對集合$B$的對射函數，$f$的反函數寫作$f^{-1}$。
+
+反函數$f^{-1}$代表集合$B$對集合$A$的函數，定義為若為且若$f^{-1}(y) = x$則$f(x) = y$。
+
+
+
+#### Introduce - 複合函數
+
+令$f$為集合$B$對集合$C$的函數，且$g$為集合$A$對集合$B$的函數，$f$與$g$的複合函數，寫作$f \circ g$，代表一個集合$A$對集合$C$的函數，定義為$(f \circ g)(x) = f(g(x))$。
 
