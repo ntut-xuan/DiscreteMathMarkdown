@@ -2360,65 +2360,95 @@ $r = \text{a mod d}$
 
 
 
-#### Introduce - The Relationship between (mod m) and mod m Notations
+#### Introduce - 兩個不同的表示法(mod m) 與 mod m
 
-- The use of "mod" in $a \equiv b\ (mod\ m)$ and $a\ mod\ m = b$ are different.
-  - $a \equiv b \pmod m$ is a relation on the set of integers.
-  - In $a \mod m = b$, the notation mod denotes a function.
-- The relationship between these notations is made clear in this theorem.
-
-
-
-#### Theorem 3
-
-Let a and b be integers, and let m be a positive integer.
-
-Then $a \equiv b\pmod m$ if and only if $a\ mod\ m = b\ mod\ m$
+- $a \equiv b \pmod m$與$a \text{ mod } m = b$是不同的東西
+  - $a \text{ mod } m = b$, 代表函數的關係。
+  - $a \equiv b \pmod m$, 代表一個整數集合的關係。
 
 
 
 #### Theorem 5
 
-Let m be a positive integer.
-
-If $a \equiv b \pmod m$ and $c \equiv d \pmod m$, then
-
-$a + c \equiv b + d \pmod m$ and $ac \equiv bd \pmod m$
+令$a, b$為整數，令$m$為正整數，則$a \equiv b \pmod m$ 若為且若 $a \text{ mod } m = b \text{ mod } m$。
 
 
 
-#### Introduce - Algebraic Manipulation of Congruences
+##### Proof
 
-- Multiplying both sides of a valid congruence by an integer preserves validity.
-  - If $a \equiv b \pmod m$ holds then $ca \equiv cb \pmod m$, where c is any integer, holds by Theorem 5 with $d = c$
-- Adding an integer to both sides of a valid congruence preserves validity.
-  - If $a \equiv b \pmod m$ holds then $c + a \equiv c + b \pmod m$, where $c$ is any integer, holds by Theorem 5 with $d = c$
-- Dividing a congruence by an integer does not always produce a valid congruence.
+如果$a \equiv b \pmod m$，則我們可以說$a - b = me, e \in \mathbb{Z}$，因此$a = me + b$
+
+那麼令$d = b \text{ mod } m$，我們可以表示成$b = mr + d, r \in \mathbb{Z}, , 0 \le d < m$
+
+因此$a = me + mr + d = m(e+r) + d$
+
+我們可以說$(e+r)$是$a/m$的商，$d$為$a/m$的餘。
+
+故$a \mod m = d = b \mod m$
+
+
+
+#### Theorem 6
+
+令$m$為正整數，如果$a \equiv b \pmod m$和$c \equiv d \pmod m$，那麼$(a + c) \equiv (b+d) \pmod m$且$ac \equiv bd \pmod m$
+
+
+
+##### Proof
+
+如果$a \equiv b \pmod m, c \equiv d \pmod m$，那麼存在$s, t \in \mathbb{Z}$，使得$a = sm + b$，且$c = tm + d$
+
+故$a + c = (s+t)m + (b+d)$，且$ac = stm^2 + sdm + tbm + bd = m(stm+sd+tb)+bd$
+
+因此$(a + c) \equiv (b+d) \pmod m$，$ac \equiv bd \pmod m$
+
+
+
+#### Introduce - 同餘的代數運算
+
+- 令$a, b$為整數，若$a \equiv b \pmod m$，則$ac  \equiv bc \pmod m$
+
+  ※可以根據Theorem 6，令$d = c$。
+
+- 令$a, b$為整數，若$a \equiv b \pmod m$，則$a + c \equiv b + c \pmod m$
+
+  ※可以根據Theorem 6，令$d = c$。
+
+- 除法並不保證能夠用在同餘上。
 
 
 
 #### Corollary 2
 
-Let m be a positive integer and let a and b be integers.
+令$m$為正整數，令$a, b$為整數，則
 
-Then, $(a+b) \pmod m = ((a \mod m) + (b \mod m)) \mod m$
+$(a + b) \text{ mod } m = ((a \text{ mod } m) + (b \text{ mod } m)) \text{ mod } m$ 
 
-and $(ab \mod m) = ((a\mod m)(b\mod m))\mod m$
-
-
-
-#### Introduce - Arithmetic Modulo m
-
-- Let $Z_m$ be the set of nonnegative integers less than $m: \{0, 1, ..., m-1\}$
-- The operation $+_m$ is defined as $a +_m b = (a+b) \mod m$
-- The operation $\cdot_m$ is defined as $a \cdot_m  b = (a\cdot b)\mod m$
-- Using these operations is said to be doing arithmetic modulo m.
-- The operations $+_m$ and $\cdot_m$ satisfy many of the same properties as ordinary addition and multiplication.
-  - Closure: If a and b belong to $Z_m$, then $a +_m b$ and $a \cdot_m b$ belong to $Z_m$
-  - Associativity: If a, b, and c belong to $Z_m$, then $(a +_m b)+_m c = a+_m(b+_mc)$ and $(a \cdot_m b) \cdot_m c = a \cdot_m (b \cdot_m c)$
-  - Commutativity: If a and b belong to $Z_m$, then $a +_m b = b +_m a$ and $a \cdot_m b = b \cdot_m a$
-  - Identity elements: The elements 0 and 1 are identity elements for addition and multiplication modulo $m$, respectively.
-    - If a belongs to $Z_m$, then $a +_m 0 = a$ and $a \cdot_m 1 = a$
+$(ab) \text{ mod } m = ((a \text{ mod } m)(b \text{ mod } m)) \text{ mod } m$
 
 
+
+##### Proof
+
+根據模的定義，則$a \equiv (a \text{ mod } m) \pmod m$，$b \equiv (b \text{ mod } m) \pmod m$
+
+By Theorem 6，可知$a+b \equiv (a \text{ mod } m)+(b \text{ mod } m) \pmod m$
+
+以及$ab \equiv (a \text{ mod } m)(b \text{ mod } m) \pmod m$
+
+
+
+#### Definition - 模的算術運算元
+
+令$\mathbb{Z}_m$為所有小於$m$的非負整數集合，則
+
+- $a +_m b$，用來表示$(a+b) \text{ mod } m$
+- $a \cdot_m b$，用來表示$(ab) \text{ mod } m$
+- 模的算術運算元有許多性質
+  - 封閉性：如果$a, b \in \mathbb{Z_m}$，則$a +_m b \in \mathbb{Z}_m$和$a \cdot_m b \in \mathbb{Z}_m$。
+  - 結合律：如果$a, b, c, \in \mathbb{Z}_m$，則$(a +_m b) +_m c = a +_m (b +_m c)$，且$(a \cdot_m b) \cdot_m c = a \cdot_m (b \cdot_m c)$
+  - 交換律：如果$a, b \in \mathbb{Z}_m$，則$a +_m b = b +_m a$，且$a \cdot_m b = b \cdot_m a$
+  - 單位元素：如果$a \in \mathbb{Z}_m$，則$a +_m 0 = a$，且$a \cdot_m 1 = a$
+  - 加法反元素：如果$a \neq 0$且$a \in \mathbb{Z}_m$，則$a +_m (m-a) = 0$，且$0 +_m 0 = 0$
+  - 分配律：如果$a, b, c, \in \mathbb{Z}_m$，那麼$a \cdot_m (b +_m c)  = (a \cdot_m b) +_m (a \cdot_m c)$，$(a +_m b)\cdot_m c = (a\cdot_m c)+(b\cdot_mc)$
 
