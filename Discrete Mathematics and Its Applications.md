@@ -2246,64 +2246,117 @@ $f(1) = 2, f(2) = 4, f(3) = 6, f(4) = 8, ..., f(n) = 2n$
 
 
 
-## 4. Number Theory and Cryptography
+## 4. 數論與密碼學
 
-### 4.1 Divisibility and Modular Arithmetic
+### 4.1 可除性與模算術
 
-#### Definition - Division
+#### Definition - 除法
 
-- If a and b are integers with a $\neq$ 0, then a divides b if there exists an integer c such that b = ac.
-- When a divides b we say that a is a factor or divisor of b and that b is a multiple of a.
-- The notation a | b denotes that a divides b.
-- If a | b, then b/a is an integer.
-- If a does not divides b, we write $a\not|\ \ b$
+- 如果$a$與$b$是整數，且$a \neq 0$，則我們說$b$能夠被$a$整除，如果存在一個整數$c$，使得$b = ac$。
+- 如果$b$能夠被$a$整除，則我們說$a$是$b$的因數或者被除數，且$b$為$a$的倍數。
+- 我們用$a | b$來表示$b$能夠被$a$整除。
+- 如果$a|b$，則$b/a$為一個整數。
+- 如果$a$沒辦法整除$b$，則我們表示為$a \not |\ \ b$
 
 
 
 #### Theorem 1
 
-Let a, b, c be integers, where $a \neq 0$
+令$a, b, c$為整數，且$a \neq 0$，則如果$a | b$和$a|c$，則$a|(b+c)$
 
-1. if $a | b$ and $a | c$, then $a | (b+c)$
-2. if $a|b$ and $a|bc$ for all integers $c$
-3. if $a|b$ and $b|c$, then $a|c$
+
+
+##### Proof
+
+如果$a|b$，則我們可以說存在一個整數$s$，使得$as = b$
+
+如果$a|c$，則我們可以說存在一個整數$t$，使得$at = c$
+
+因此$b+c = as+at = a(s+t)$，因為$s+t$為整數，由此可證如果$a | b$和$a|c$，則$a|(b+c)$
+
+
+
+#### Theorem 2
+
+令$a, b, c$為整數，且$a\neq 0$，則如果$a|b$，那麼對於任意$c$，符合$a|bc$
+
+
+
+##### Proof
+
+如果$a|b$，則我們可以說存在一個整數$s$，使得$as = b$
+
+將等號兩邊同乘以$c$，得到$asc = bc$
+
+由於兩個整數相乘為整數，故我們依然可以找到一個整數$d = sc$，使得$ad = bc$
+
+由此可證如果$a|b$，那麼對於任意$c$，符合$a|bc$。
+
+
+
+#### Theorem 3
+
+令$a, b, c$為整數，且$a\neq 0$，則如果$a|b$且$b|c$，那麼$a|c$
+
+
+
+##### Proof
+
+如果$a|b$，則我們可以說存在一個整數$s$，使得$as = b$
+
+如果$b|c$，則我們可以說存在一個整數$t$，使得$bt = c$，也就是$ast = c$
+
+由於兩個整數相乘為整數，故我們依然可以找到一個整數$d = st$，使得$ad = c$
+
+由此可證如果如果$a|b$且$b|c$，那麼$a|c$。
 
 
 
 #### Corollary 1
 
-If a, b, and c be integers, where a $\neq$ 0, such that $a | b$ and $a|c$, then $a | mb+nc$ whenever $m$ and $n$ are integers.
+如果$a, b, c$為整數，且$a \neq 0$，$a|b$和$a|c$，那麼$a|mb+nc$，其中$n, m \in \mathbb{Z}$
 
 
 
-#### Algorithm - **Division Algorithm**
+#### Introduce - 除法算法
 
-If $a$ is an integer and $d$ a positive integer, then there are unique integers $q$ and $r$, with $0 \le r \le d$, such that $a = dq + r$.
+如果$a \in \mathbb{Z}$，且$d \in \mathbb{Z}^+$，那麼存在唯一$q, r \in \mathbb{Z}$，其中$0 \le r < d$，使得$a = dq + r$。
 
-- d is called the divisor
-- a is called the dividend.
-- q is called the quotient.
-- r is called the remainder.
+其中$a$被稱為被除數，$d$被稱為除數，$q$被稱做商，$r$被稱做餘數。
 
-The notation will be like $q = a \div d$，$r = a \mod d$
 
-#### 
 
-#### Introduce - Congruence Relation
+我們可以用$\text{mod}$與$\text{div}$來取得商與餘數，定義
 
-- If a and b are integers and m is a positive integer, then a is congruent to b modulo m if m divides a - b.
-- The notation $a \equiv b (mod\ m)$ says that a is congruent to b modulo m.
-- We say that $a \equiv b(mod\ m)$ is a congruence and that m is its modulus.
-- Two integers are congruent mod m if and only if they have the same remainder when divided by m.
-- If a is not congruent to b modulo m, we write $a \not \equiv b(mod\ m)$
+$q =  \text{a div d}$
+
+$r = \text{a mod d}$
+
+
+
+#### Introduce - 同餘關係
+
+如果$a, b$為整數，且$m$為一正整數，則如果$m$可以整除$a-b$，我們說$a$與$b$同餘模$m$，可以用$a \equiv b \pmod m$來表示。
+
+兩個整數$a, b$能夠同餘模$m$，若為且若$a$除以$m$與$b$除以$m$的餘數相同。
+
+如果$a$除以$m$與$b$除以$m$的餘數不同，那麼我們表示為$\displaystyle a \not\equiv b \pmod m$
 
 
 
 #### Theorem 4
 
-Let m be a positive integer.
+令$m$為一正整數，整數$a, b$能夠同餘於$m$，若為且若存在一個$k$使得$a = b + km$
 
-The integers a and b are congruent modulo m if and only if there is an integer k such that a = b + km.
+
+
+##### Proof
+
+若$a \equiv b \pmod m$，那麼$m | (a-b)$
+
+因此，會存在一個$k$，使得$mk = a-b$，因此$a = mk+b$
+
+反之，若存在一個$k$使得$a = b+km$，那麼$km = a-b$，因此可以得知$m | (a-b)$和$a \equiv b \pmod m$
 
 
 
