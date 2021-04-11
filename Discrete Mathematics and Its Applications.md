@@ -2530,3 +2530,17 @@ $1024 = 2 \times 2 \times 2 \times 2 \times 2 \times 2 \times 2 \times 2 \times 
 
 這就證明了：對於任何一個有限的質數集，總有一個質數不在其中，所以質數一定是無限的。
 
+
+
+#### Theorem - 3
+
+定義$\pi(x) = \dfrac{x}{\ln(x)}$為質數計數函數，也就是小於$x$的質數個數。
+
+則若$x \rightarrow \infty$，$\displaystyle \lim_{x\rightarrow \infty} \dfrac{\pi(x)}{\dfrac{x}{\ln(x)}} \approx 1$
+
+這個定理告訴我們，若要尋找所有不超過$x$的質數，則他的數量會趨近於$\dfrac{x}{\ln(x)}$
+
+若我們要從所有小於$x$的正整數中挑中質數，則他的機率為$\dfrac{x}{\ln(x)} \div x = \dfrac{1}{\ln(x)}$
+
+
+
