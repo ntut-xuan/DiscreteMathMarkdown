@@ -2532,7 +2532,7 @@ $1024 = 2 \times 2 \times 2 \times 2 \times 2 \times 2 \times 2 \times 2 \times 
 
 
 
-#### Theorem - 3
+#### Theorem 3
 
 定義$\pi(x) = \dfrac{x}{\ln(x)}$為質數計數函數，也就是小於$x$的質數個數。
 
@@ -2541,6 +2541,84 @@ $1024 = 2 \times 2 \times 2 \times 2 \times 2 \times 2 \times 2 \times 2 \times 
 這個定理告訴我們，若要尋找所有不超過$x$的質數，則他的數量會趨近於$\dfrac{x}{\ln(x)}$
 
 若我們要從所有小於$x$的正整數中挑中質數，則他的機率為$\dfrac{x}{\ln(x)} \div x = \dfrac{1}{\ln(x)}$
+
+
+
+#### Definition - 最大公因數
+
+令$a, b$為兩整數，且$a, b \neq 0$，若存在一個最大的整數$d$使得$d | a$且$d|b$，則$d$被稱做$a, b$的最大公因數。
+
+最大公因數$a, b$被寫作$gcd(a,  b)$。
+
+
+
+#### Definition - 互質
+
+令$a, b$為兩整數，若$gcd(a, b) = 1$，則我們說$a, b$互質。
+
+
+
+#### Definition - 兩兩互質
+
+若有一整數數列$a_1, a_2, a_3, a_4, ... ,a_n$，若$gcd(a_i, a_j) = 1, 1 <= i < j <= n$，則我們說這個數列兩兩互質。
+
+
+
+#### Introduce - 利用質因數分解尋找最大公因數
+
+假設$a = p_1^{a_1} p_2^{a_2} p_3^{a_3} ... p_n^{a_n}$，且$b = p_1^{b_1} p_2^{b_2} p_3^{b_3} ... p_n^{b_n}$
+
+則兩數的$gcd(a, b) = p_1^{\min(a_1, b_1)} p_2^{\min(a_2, b_2)} p_3^{\min(a_3, b_3)} ... p_n^{\min(a_n, b_n)} $
+
+
+
+#### Definition - 最小公倍數
+
+令$a, b$為兩正整數，若存在一個$d$使得$a|d$且$b|d$，則我們說$d$為$a, b$的最小公倍數。
+
+最小公倍數$a, b$被寫作$lcm(a, b)$
+
+我們可以用質因數分解來尋找最小公倍數，也就是
+
+假設$a = p_1^{a_1} p_2^{a_2} p_3^{a_3} ... p_n^{a_n}$，且$b = p_1^{b_1} p_2^{b_2} p_3^{b_3} ... p_n^{b_n}$
+
+則兩數的$lcm(a, b) = p_1^{\max(a_1, b_1)} p_2^{\max(a_2, b_2)} p_3^{\max(a_3, b_3)} ... p_n^{\max(a_n, b_n)} $
+
+
+
+#### Theorem 4
+
+令$a, b$為正整數，則$ab = gcd(a, b) \times lcm(a, b)$
+
+
+
+##### Proof
+
+待補
+
+
+
+#### Introduce - 歐幾里得演算法
+
+我們可以用歐幾里得演算法來計算$a, b$的最大公因數
+
+論點建立在$gcd(a, b) = gcd(b, c), a>b$，其中$c$為$a$除以$b$的餘數。
+
+
+
+#### Introduce - 歐幾里得演算法的正確性
+
+##### 引理1
+
+令$a = bq + r$，其中$a, b, q, r \in \mathbb{Z}$，則$gcd(a, b) = gcd(b, r)$。
+
+##### 證明
+
+假設$d$能夠整除$a, b$，則$d$也可以整除$a- bq= r$，因此，若$gcd(a, b) = d_1$，則$gcd(b, r)=d_1$
+
+假設$d$能夠整除$b, r$，則$d$也可以整除$bq+r=a$，因此，若$gcd(b, r) = d_2$，則$gcd(a, b) =d_2$
+
+因此，$gcd(a, b) = gcd(b, r)$。
 
 
 
