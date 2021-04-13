@@ -498,7 +498,7 @@ $\neg(p \rightarrow q) \equiv p \and \neg q$
 
 $(p \rightarrow q) \and (p \rightarrow r) \equiv p \rightarrow (q \and r)$
 
-$(p \rightarrow r) \and (q \rightarrow r) \equiv (p \and q) \rightarrow r$
+$(p \rightarrow r) \and (q \rightarrow r) \equiv (p \or q) \rightarrow r$
 
 $(p \rightarrow q) \and (p \rightarrow r) \and p \rightarrow (q \or r)$
 
