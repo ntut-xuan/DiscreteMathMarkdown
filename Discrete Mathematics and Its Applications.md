@@ -88,9 +88,9 @@ or even more simply as "Vandana’s smartphone has less then 32GB of memory"
 
 #### Definition - 邏輯與
 
-令$p$與$q$為命題，$p$與$q$的邏輯與，我們表示為$p \and q$，念作"$p$ and $q$"。
+令$p$與$q$為命題，$p$與$q$的邏輯與，我們表示為$p \land q$，念作"$p$ and $q$"。
 
-當$p$與$q$都為True時，$p \and q$才會true，反之為false。
+當$p$與$q$都為True時，$p \land q$才會true，反之為false。
 
 
 
@@ -114,9 +114,9 @@ The conjunction of the propositions $p$ and $q$ is
 
 #### Definition - 邏輯或
 
-令$p$與$q$為命題，$p$與$q$的邏輯或，我們表示為$p \or q$，念作"$p$ or $q$"。
+令$p$與$q$為命題，$p$與$q$的邏輯或，我們表示為$p \lor q$，念作"$p$ or $q$"。
 
-當$p$與$q$都為false時，$p \or q$為false，反之為true。
+當$p$與$q$都為false時，$p \lor q$為false，反之為true。
 
 
 
@@ -288,7 +288,7 @@ How can this English sentence be translated into a logical expression?
 
 Let $A$ can access the internet from compus, $B$ are a computer science major, and $C$ are a freshman.
 
-So that the English sentence be translated into $A \rightarrow (B \or \neg C)$
+So that the English sentence be translated into $A \rightarrow (B \lor \neg C)$
 
 
 
@@ -302,7 +302,7 @@ So that the English sentence be translated into $A \rightarrow (B \or \neg C)$
 
 ##### Example
 
-$(p \or \neg p)$
+$(p \lor \neg p)$
 
 無論$p$是True或者False，他都恆為True，稱為tautology(恆真式)
 
@@ -316,7 +316,7 @@ $(p \or \neg p)$
 
 ##### Example
 
-$(p \and \neg p)$
+$(p \land \neg p)$
 
 無論$p$是True或者False，他都恆為False，稱為contradiction
 
@@ -330,15 +330,15 @@ $(p \and \neg p)$
 
 ##### Example 
 
-證明$p \rightarrow q$和$\neg p \or q$為邏輯等價。
+證明$p \rightarrow q$和$\neg p \lor q$為邏輯等價。
 
 
 
 我們可以窮舉真值表，來證明兩者為邏輯等價
 
-令$A = p \rightarrow q$，$B = \neg p \or q$，則
+令$A = p \rightarrow q$，$B = \neg p \lor q$，則
 
-| $p$  | $q$  | $A = p \rightarrow q$ | $B = \neg p \or q$ | $A \leftrightarrow B$ |
+| $p$  | $q$  | $A = p \rightarrow q$ | $B = \neg p \lor q$ | $A \leftrightarrow B$ |
 | ---- | ---- | --------------------- | ------------------ | --------------------- |
 | 0    | 0    | 1                     | 1                  | 1                     |
 | 0    | 1    | 1                     | 1                  | 1                     |
@@ -349,23 +349,23 @@ $(p \and \neg p)$
 
 #### Recall - 德摩根定律
 
-$\neg (p \and q) \equiv \neg p \or \neg q$
+$\neg (p \land q) \equiv \neg p \lor \neg q$
 
-$\neg (p \or q) \equiv \neg p \and \neg q$
+$\neg (p \lor q) \equiv \neg p \land \neg q$
 
 
 
 ##### Example 2
 
-證明 $\neg (p \or q)$ 與 $\neg p \and \neg q$ 邏輯等價。
+證明 $\neg (p \lor q)$ 與 $\neg p \land \neg q$ 邏輯等價。
 
 
 
-設$A=\neg(p \or q)$，$B = \neg p \and \neg q$
+設$A=\neg(p \lor q)$，$B = \neg p \land \neg q$
 
 我們可以窮舉真值表，來證明兩者為邏輯等價
 
-| $p$  | $q$  | $A=\neg(p \or q)$ | $B = \neg p \and \neg q$ | $A \leftrightarrow B$ |
+| $p$  | $q$  | $A=\neg(p \lor q)$ | $B = \neg p \land \neg q$ | $A \leftrightarrow B$ |
 | ---- | ---- | ----------------- | ------------------------ | --------------------- |
 | 0    | 0    | 1                 | 1                        | 1                     |
 | 0    | 1    | 0                 | 0                        | 1                     |
@@ -376,15 +376,15 @@ $\neg (p \or q) \equiv \neg p \and \neg q$
 
 ##### Example 3
 
-證明 $p \rightarrow q$ 和 	$\neg p \or q$ 邏輯等價。
+證明 $p \rightarrow q$ 和 	$\neg p \lor q$ 邏輯等價。
 
 
 
-設$A = p \rightarrow q$，$B = \neg p \or q$
+設$A = p \rightarrow q$，$B = \neg p \lor q$
 
 我們可以窮舉真值表，來證明兩者為邏輯等價。
 
-| $p$  | $q$  | $A = p \rightarrow q$ | $B = \neg p \or q$ | $A \leftrightarrow B$ |
+| $p$  | $q$  | $A = p \rightarrow q$ | $B = \neg p \lor q$ | $A \leftrightarrow B$ |
 | ---- | ---- | --------------------- | ------------------ | --------------------- |
 | 0    | 0    | 1                     | 1                  | 1                     |
 | 0    | 1    | 1                     | 1                  | 1                     |
@@ -395,13 +395,13 @@ $\neg (p \or q) \equiv \neg p \and \neg q$
 
 ##### Example 4
 
-證明 $p \or (q \and r)$ 和 $(p \or q) \and (p \and r)$ 邏輯等價。
+證明 $p \lor (q \land r)$ 和 $(p \lor q) \land (p \land r)$ 邏輯等價。
 
 
 
 我們可以窮舉真值表，來證明兩者為邏輯等價。
 
-| $p$  | $q$  | $r$  | $(q \and r)$ | $(p \or q)$ | $(p \and r)$ | $p \and (q \or r)$ | $(p \and q) \and (p \and r)$ | $p \and (q \or r) \leftrightarrow (p \and q) \and (p \and r)$ |
+| $p$  | $q$  | $r$  | $(q \land r)$ | $(p \lor q)$ | $(p \land r)$ | $p \land (q \lor r)$ | $(p \land q) \land (p \land r)$ | $p \land (q \lor r) \leftrightarrow (p \land q) \land (p \land r)$ |
 | ---- | ---- | ---- | ------------ | ----------- | ------------ | ------------------ | ---------------------------- | ------------------------------------------------------------ |
 | 0    | 0    | 0    | 0            | 0           | 0            | 0                  | 0                            | 1                                                            |
 | 0    | 0    | 1    | 0            | 0           | 0            | 0                  | 0                            | 1                                                            |
@@ -416,25 +416,25 @@ $\neg (p \or q) \equiv \neg p \and \neg q$
 
 #### Recall - 衡等律
 
-$p \and T \equiv p$
+$p \land T \equiv p$
 
-$p \or F \equiv p$
+$p \lor F \equiv p$
 
 
 
 #### Recall - 支配律
 
-$p \and F \equiv F$
+$p \land F \equiv F$
 
-$p \or T \equiv T$
+$p \lor T \equiv T$
 
 
 
 #### Recall - 冪等律
 
-$p \and p \equiv p$
+$p \land p \equiv p$
 
-$p \or p \equiv p$
+$p \lor p \equiv p$
 
 
 
@@ -446,73 +446,73 @@ $\neg(\neg p) \equiv p$
 
 #### Recall - 交換律
 
-$p \and q \equiv q \and p$
+$p \land q \equiv q \land p$
 
-$p \or q \equiv q \or p$
+$p \lor q \equiv q \lor p$
 
 
 
 #### Recall - 結合律
 
-$(p \or q) \or r \equiv p \or (q \or r)$
+$(p \lor q) \lor r \equiv p \lor (q \lor r)$
 
-$(p \and q) \and r \equiv p \and (q \and r)$
+$(p \land q) \land r \equiv p \land (q \land r)$
 
 
 
 #### Recall - 分配律
 
-$p \and (q \or r) \equiv (p \and q) \or (p \and r)$
+$p \land (q \lor r) \equiv (p \land q) \lor (p \land r)$
 
-$p \or (q \and r) \equiv (p \or q) \and (p \or r)$
+$p \lor (q \land r) \equiv (p \lor q) \land (p \lor r)$
 
 
 
 #### Recall - 吸收律
 
-$p \or (p \and q) \equiv p$
+$p \lor (p \land q) \equiv p$
 
-$p \and (p \or q) \equiv p$
+$p \land (p \lor q) \equiv p$
 
 
 
 #### Recall - 否定律
 
-$p \and \neg p \equiv F$
+$p \land \neg p \equiv F$
 
-$p \or \neg p \equiv T$
+$p \lor \neg p \equiv T$
 
 
 
 #### Recall - 一些有關實質蘊含的邏輯等價
 
-$p \rightarrow q \equiv \neg p \or q$
+$p \rightarrow q \equiv \neg p \lor q$
 
 $p \rightarrow q \equiv \neg q \rightarrow \neg p$
 
-$p \or q \equiv \neg p \rightarrow q$
+$p \lor q \equiv \neg p \rightarrow q$
 
-$p \and q \equiv \neg(p \rightarrow \neg q)$
+$p \land q \equiv \neg(p \rightarrow \neg q)$
 
-$\neg(p \rightarrow q) \equiv p \and \neg q$
+$\neg(p \rightarrow q) \equiv p \land \neg q$
 
-$(p \rightarrow q) \and (p \rightarrow r) \equiv p \rightarrow (q \and r)$
+$(p \rightarrow q) \land (p \rightarrow r) \equiv p \rightarrow (q \land r)$
 
-$(p \rightarrow r) \and (q \rightarrow r) \equiv (p \or q) \rightarrow r$
+$(p \rightarrow r) \land (q \rightarrow r) \equiv (p \lor q) \rightarrow r$
 
-$(p \rightarrow q) \and (p \rightarrow r) \and p \rightarrow (q \or r)$
+$(p \rightarrow q) \land (p \rightarrow r) \land p \rightarrow (q \lor r)$
 
-$(p \rightarrow r) \or (q \rightarrow r) \equiv (p \and q) \rightarrow r$
+$(p \rightarrow r) \lor (q \rightarrow r) \equiv (p \land q) \rightarrow r$
 
 
 
 #### Recall - 一些有關若為且若的邏輯等價
 
-$p \leftrightarrow q \equiv (p \rightarrow q) \and (q \rightarrow p)$
+$p \leftrightarrow q \equiv (p \rightarrow q) \land (q \rightarrow p)$
 
 $\displaystyle p \leftrightarrow q \equiv \neg p \leftrightarrow \neg q$
 
-$p \leftrightarrow q \equiv (p \and q) \or (\neg p \and \neg q)$
+$p \leftrightarrow q \equiv (p \land q) \lor (\neg p \land \neg q)$
 
 $\neg(p \leftrightarrow q) \equiv p \leftrightarrow \neg q$
 
@@ -526,45 +526,45 @@ $\neg(p \leftrightarrow q) \equiv p \leftrightarrow \neg q$
 
 ##### Example 1
 
-證明 $\neg (p \rightarrow q) \equiv p \and \neg q$ 邏輯等價
+證明 $\neg (p \rightarrow q) \equiv p \land \neg q$ 邏輯等價
 
 
 
-首先，$p \rightarrow q \equiv \neg p \or q$，所以$\neg (p \rightarrow q) \equiv \neg(\neg p \or q) \equiv p \and \neg q$
+首先，$p \rightarrow q \equiv \neg p \lor q$，所以$\neg (p \rightarrow q) \equiv \neg(\neg p \lor q) \equiv p \land \neg q$
 
-因此$\neg (p \rightarrow q) \equiv p \and \neg q$，證畢
+因此$\neg (p \rightarrow q) \equiv p \land \neg q$，證畢
 
 
 
 ##### Example 2
 
-利用一連串的邏輯等價，證明 $\neg (p \or (\neg p \and q)) \equiv \neg p \and \neg q$
+利用一連串的邏輯等價，證明 $\neg (p \lor (\neg p \land q)) \equiv \neg p \land \neg q$
 
 
 
-利用德摩根定律，得到$\neg (p \or (\neg p \and q)) \equiv \neg p \and \neg(\neg p \and q)$
+利用德摩根定律，得到$\neg (p \lor (\neg p \land q)) \equiv \neg p \land \neg(\neg p \land q)$
 
-再次利用德摩根定律，得到$\neg p \and \neg(\neg p \and q) \equiv \neg p \and(p \or \neg q)$
+再次利用德摩根定律，得到$\neg p \land \neg(\neg p \land q) \equiv \neg p \land(p \lor \neg q)$
 
-利用分配律，$\neg p \and(p \or \neg q) \equiv (p \and \neg p) \or (\neg p \and \neg q) \equiv F \or (\neg p \and \neg q) \equiv (\neg p \and \neg q)$
+利用分配律，$\neg p \land(p \lor \neg q) \equiv (p \land \neg p) \lor (\neg p \land \neg q) \equiv F \lor (\neg p \land \neg q) \equiv (\neg p \land \neg q)$
 
-因此，$\neg (p \or (\neg p \and q)) \equiv \neg p \and \neg q$，證畢
+因此，$\neg (p \lor (\neg p \land q)) \equiv \neg p \land \neg q$，證畢
 
 
 
 ##### Example 3
 
-證明 $(p \and q) \rightarrow (p \or q)$為恆等式
+證明 $(p \land q) \rightarrow (p \lor q)$為恆等式
 
 
 
-利用$p \rightarrow q \equiv \neg p \or q$的特性，改寫為$(p \and q) \rightarrow (p \or q) \equiv \neg(p \and q) \or (p \or q)$
+利用$p \rightarrow q \equiv \neg p \lor q$的特性，改寫為$(p \land q) \rightarrow (p \lor q) \equiv \neg(p \land q) \lor (p \lor q)$
 
-利用德摩根定律，改寫為$\neg(p \and q) \or (p \and q) \equiv (\neg p \or \neg q) \or (p \or q)$
+利用德摩根定律，改寫為$\neg(p \land q) \lor (p \land q) \equiv (\neg p \lor \neg q) \lor (p \lor q)$
 
-利用交換律，$(\neg p \or p) \or(\neg q \or q) \equiv T \or T \equiv T$
+利用交換律，$(\neg p \lor p) \lor(\neg q \lor q) \equiv T \lor T \equiv T$
 
-故$(p \and q) \rightarrow (p \or q)$為恆等式，證畢。
+故$(p \land q) \rightarrow (p \lor q)$為恆等式，證畢。
 
 
 
@@ -578,9 +578,9 @@ $\neg(p \leftrightarrow q) \equiv p \leftrightarrow \neg q$
 
 判斷以下三個複合命題$P$是否能夠被滿足。
 
-1. $(p \and \neg q) \or (q \and \neg r) \and (r \or \ \neg p)$
-2. $(p \and q \and r) \or (\neg p \and \neg q \and \neg r)$
-3. $(p \or \neg q) \and (q \or \neg r) \and (r \or \neg p) \and (p \or q \or r) \and (\neg p \or \neg q \or \neg r)$
+1. $(p \land \neg q) \lor (q \land \neg r) \land (r \lor \ \neg p)$
+2. $(p \land q \land r) \lor (\neg p \land \neg q \land \neg r)$
+3. $(p \lor \neg q) \land (q \lor \neg r) \land (r \lor \neg p) \land (p \lor q \lor r) \land (\neg p \lor \neg q \lor \neg r)$
 
 
 
@@ -592,11 +592,11 @@ $\neg(p \leftrightarrow q) \equiv p \leftrightarrow \neg q$
 
 考慮到
 
-$(p \or \neg q) \and (q \or \neg r) \and (r \or \neg p)$必須要是true，則$p, q, r$都必須要是true，或者$p, q, r$都必須要是false。
+$(p \lor \neg q) \land (q \lor \neg r) \land (r \lor \neg p)$必須要是true，則$p, q, r$都必須要是true，或者$p, q, r$都必須要是false。
 
-$(p \or q \or r) \and (\neg p \or \neg q \or \neg r)$必須要是true，則$p, q, r$都不能是true，或者都不能是false。
+$(p \lor q \lor r) \land (\neg p \lor \neg q \lor \neg r)$必須要是true，則$p, q, r$都不能是true，或者都不能是false。
 
-因此，兩者矛盾，故$(p \or \neg q) \and (q \or \neg r) \and (r \or \neg p) \and (p \or q \or r) \and (\neg p \or \neg q \or \neg r)$不能被滿足。
+因此，兩者矛盾，故$(p \lor \neg q) \land (q \lor \neg r) \land (r \lor \neg p) \land (p \lor q \lor r) \land (\neg p \lor \neg q \lor \neg r)$不能被滿足。
 
 
 
@@ -740,7 +740,7 @@ $\forall$符號代表全域量詞，我們把$\forall x P(x)$讀作"for all $x, 
 
 
 
-我們可以把真值表達成$P(1) \and P(2) \and P(3) \and P(4)$
+我們可以把真值表達成$P(1) \land P(2) \land P(3) \land P(4)$
 
 但是$P(4)$為false，因為$4^2 < 10$
 
@@ -802,11 +802,11 @@ $\forall$符號代表全域量詞，我們把$\forall x P(x)$讀作"for all $x, 
 
 我們可以知道$x \in \{1, 2, 3, 4\}$
 
-所以我們可以寫成$P(1) \or P(2) \or P(3) \or P(4)$
+所以我們可以寫成$P(1) \lor P(2) \lor P(3) \lor P(4)$
 
 由於我們可以知道，$4^2 = 16 > 10$ ，因此$P(4)$為true
 
-故$P(1) \or P(2) \or P(3) \or P(4)$為true
+故$P(1) \lor P(2) \lor P(3) \lor P(4)$為true
 
 因此$\exist x P(x)$為true
 
@@ -844,15 +844,15 @@ $\forall$符號代表全域量詞，我們把$\forall x P(x)$讀作"for all $x, 
 
 且所有的實數$y$都要符合這個敘述，因此$\forall y[(y\neq 0) \rightarrow (y^3\neq 0)]$
 
-第三個例子，若$z > 0$，則$z^2 = 2$，則我們可以寫成$(z > 0) \and (z^2 = 2)$
+第三個例子，若$z > 0$，則$z^2 = 2$，則我們可以寫成$(z > 0) \land (z^2 = 2)$
 
-且至少一個$z$都要符合這個敘述，因此$\exist z[(z > 0) \and (z^2 = 2)]$
+且至少一個$z$都要符合這個敘述，因此$\exist z[(z > 0) \land (z^2 = 2)]$
 
 
 
 ##### Introduce - 量詞的優先級
 
-$\forall$與$\exist$是所有邏輯符號中優先級最高的，也就是若$\forall x P(x) \or Q(x)$，他代表著$(\forall x P(x)) \or Q(x)$，而非$\forall x (P(x) \or Q(x))$
+$\forall$與$\exist$是所有邏輯符號中優先級最高的，也就是若$\forall x P(x) \lor Q(x)$，他代表著$(\forall x P(x)) \lor Q(x)$，而非$\forall x (P(x) \lor Q(x))$
 
 
 
@@ -876,7 +876,7 @@ $\forall$與$\exist$是所有邏輯符號中優先級最高的，也就是若$\f
 
 ##### Example 2
 
-在敘述$\exist x(P(x) \and Q(x)) \or \forall x R(x)$，所有的變數都是綑綁變數
+在敘述$\exist x(P(x) \land Q(x)) \lor \forall x R(x)$，所有的變數都是綑綁變數
 
 第一個存在量詞對括號內所有的$x$進行綑綁，而第二個存在量詞對命題函數$R$的變數$x$進行綑綁。
 
@@ -884,7 +884,7 @@ $\forall$與$\exist$是所有邏輯符號中優先級最高的，也就是若$\f
 
 ##### Example 3
 
-在敘述$\exist x(P(x) \and Q(x)) \or \forall y R(y)$，所有變數都是綑綁變數
+在敘述$\exist x(P(x) \land Q(x)) \lor \forall y R(y)$，所有變數都是綑綁變數
 
 第一個存在量詞對括號內所有的$x$進行綑綁，而第二個存在量詞對命題函數$R$的變數$y$進行綑綁。
 
@@ -902,25 +902,25 @@ $\forall$與$\exist$是所有邏輯符號中優先級最高的，也就是若$\f
 
 ##### Example
 
-證明$\forall x (P(x) \and Q(x))$與$\forall P(x) \and \forall Q(x)$邏輯等價。
+證明$\forall x (P(x) \land Q(x))$與$\forall P(x) \land \forall Q(x)$邏輯等價。
 
 
 
-若要證明$\forall x (P(x) \and Q(x))$與$\forall P(x) \and \forall Q(x)$邏輯等價
+若要證明$\forall x (P(x) \land Q(x))$與$\forall P(x) \land \forall Q(x)$邏輯等價
 
-則我們假設$a \in D(x)$，其中$D(x)$代表$x$的定義域，那麼如果$\forall x (P(x) \and Q(x))$是true，則$P(a) \and Q(a)$都為true。
+則我們假設$a \in D(x)$，其中$D(x)$代表$x$的定義域，那麼如果$\forall x (P(x) \land Q(x))$是true，則$P(a) \land Q(a)$都為true。
 
 達成與邏輯為正的條件即為$P(a)$與$Q(a)$皆為true，則與邏輯才會成立。
 
-接著，假設$\forall x P(x) \and \forall x Q(x)$為true，且$a \in D(x)$
+接著，假設$\forall x P(x) \land \forall x Q(x)$為true，且$a \in D(x)$
 
 那麼為了達成與邏輯的條件，$P(a)$應為true，$Q(a)$也應為true。
 
-故$P(a) \and Q(a)$應為true，而$a \in D(x)$，則代表所有在$D(x)$的變數$a$都可以使得$P(a) \and Q(a)$為true
+故$P(a) \land Q(a)$應為true，而$a \in D(x)$，則代表所有在$D(x)$的變數$a$都可以使得$P(a) \land Q(a)$為true
 
-故我們可以把$a$改寫成$\forall x (P(x) \and Q(x))$
+故我們可以把$a$改寫成$\forall x (P(x) \land Q(x))$
 
-因此，我們可以得知，$\forall x (P(x) \and Q(x))$與$\forall x P(x) \and \forall x Q(x)$邏輯等價。
+因此，我們可以得知，$\forall x (P(x) \land Q(x))$與$\forall x P(x) \land \forall x Q(x)$邏輯等價。
 
 
 
@@ -1166,7 +1166,7 @@ $x$的值取決於定義域。
 
 #### Introduce - 選言三段論
 
-若$P \or Q \equiv T$，且$\neg P \equiv T$，則$Q \equiv T$
+若$P \lor Q \equiv T$，且$\neg P \equiv T$，則$Q \equiv T$
 
 
 
@@ -1182,7 +1182,7 @@ $x$的值取決於定義域。
 
 #### Introduce - 添加律
 
-若$P \equiv T$，則$P \or Q \equiv T$
+若$P \equiv T$，則$P \lor Q \equiv T$
 
 
 
@@ -1196,7 +1196,7 @@ $x$的值取決於定義域。
 
 #### Introduce - 簡化律
 
-若$P \and Q  \equiv T$，則$P \equiv T$
+若$P \land Q  \equiv T$，則$P \equiv T$
 
 
 
@@ -1210,7 +1210,7 @@ $x$的值取決於定義域。
 
 #### Introduce - 連言
 
-若$P \equiv T$，且$Q \equiv T$，則$P \and Q \equiv T$
+若$P \equiv T$，且$Q \equiv T$，則$P \land Q \equiv T$
 
 
 
@@ -1226,7 +1226,7 @@ $x$的值取決於定義域。
 
 #### Introduce - 預解律
 
-若$P \or Q \equiv T$，且$\neg P \or R \equiv T$，則$Q \or R \equiv T$
+若$P \lor Q \equiv T$，且$\neg P \lor R \equiv T$，則$Q \lor R \equiv T$
 
 
 
@@ -1417,7 +1417,7 @@ $\forall x,y \in \mathbb{R}$，$x + y \in \mathbb{R}$是一個公理。
 | 用途                      | 假設                          | 矛盾                            |
 | ------------------------- | ----------------------------- | ------------------------------- |
 | $P$ is true               | $\neg P$ is true              | $\neg P \rightarrow F$          |
-| $P \rightarrow Q$ is true | $P$ is true, $\neg Q$ is true | $(P \and \neg Q) \rightarrow F$ |
+| $P \rightarrow Q$ is true | $P$ is true, $\neg Q$ is true | $(P \land \neg Q) \rightarrow F$ |
 
 
 
@@ -1497,7 +1497,7 @@ $n \le 1$，已知$n^2 \ge 0$，故$n^2 \ge n$
 
 存在一個$x$，使得$P(x)$為true，且除了$x$以外的$y$，使得$P(x)$為false。
 
-$\exist x (P(x) \and \forall y (y \neq x \rightarrow \neg P(y)))$
+$\exist x (P(x) \land \forall y (y \neq x \rightarrow \neg P(y)))$
 
 
 
@@ -1671,7 +1671,7 @@ $V = \text{{a, e, i, o, u}}$
 
 若為且若集合$A$的每個元素都為集合$B$的元素，則我們說$A$是$B$的子集合，且$B$為$A$的父集合。
 
-可以表示成$(A \subseteq B \and B \supseteq A) \iff \forall x(x \in A \rightarrow x \in B)$
+可以表示成$(A \subseteq B \land B \supseteq A) \iff \forall x(x \in A \rightarrow x \in B)$
 
 
 
@@ -1701,7 +1701,7 @@ $\{a, b\} \subseteq \{a, b\}$
 
 若$A$是$B$的真子集，則對於所有在集合$A$的$x$也都在集合$B$，且$B$存在一個元素不在集合$A$。
 
-可以寫作，$A \subset B \iff \forall x(x \in A \rightarrow x \in B) \and \exist x(x \in B \and x \not \in A)$。
+可以寫作，$A \subset B \iff \forall x(x \in A \rightarrow x \in B) \land \exist x(x \in B \land x \not \in A)$。
 
 
 
@@ -1792,7 +1792,7 @@ $A = (1, 2, 3, 4, 5)$，$B = (1, 2 ,3, 4, 5)$，則$A = B$
 
 $A \times B$是一個集合，包含了所有不同的有序對$(a, b)$，其中$a \in A$，$b \in B$
 
-我們可以寫成這樣：$A \times B = \{(a, b) | a \in A \and b \in B\}$
+我們可以寫成這樣：$A \times B = \{(a, b) | a \in A \land b \in B\}$
 
 
 
@@ -1848,7 +1848,7 @@ $A × B × C = \{(0,1,0), (0,1,1), (0,1,2),(0,2,0), (0,2,1), (0,2,2),(1,1,0), (1
 
 #### Introduce - 聯集
 
-$A$與$B$為集合，若$A$與$B$取聯集，則我們可以表示成$A \cup B = \{x | x \in A \or x \in B\}$。
+$A$與$B$為集合，若$A$與$B$取聯集，則我們可以表示成$A \cup B = \{x | x \in A \lor x \in B\}$。
 
 ![image-20210318201511613](https://i.imgur.com/4E0HEfG.png)
 
@@ -1864,7 +1864,7 @@ $A$與$B$為集合，若$A$與$B$取聯集，則我們可以表示成$A \cup B =
 
 #### Introduce - 交集
 
-$A$與$B$為集合，若$A$與$B$取交集，則我們可以表示成$A \cap B = \{x | x \in A \and x \in B\}$
+$A$與$B$為集合，若$A$與$B$取交集，則我們可以表示成$A \cap B = \{x | x \in A \land x \in B\}$
 
 ![image-20210318201634099](https://i.imgur.com/8kYIVY9.png)
 
@@ -1912,7 +1912,7 @@ $\{x | x \le 70\}$
 
 $A$與$B$的差集，可以表示成$A - B$，代表集合$A$不包含集合$B$的東西。
 
-可以被定義為$A - B = \{x | x \in A \and x \not \in B\} = A \cap \overline{B}$
+可以被定義為$A - B = \{x | x \in A \land x \not \in B\} = A \cap \overline{B}$
 
 
 
@@ -2003,11 +2003,11 @@ $A \oplus B = (A - B) \cup (B - A) = \{1, 2\} \cup \{6, 7\} = \{1, 2, 6, 7\}$
 
 一個$A \rightarrow B$，可以用來表示$A \times B$的子集合，寫作
 
-$\forall x(x \in A \rightarrow \exist y(y \in B \and (x, y) \in f))$
+$\forall x(x \in A \rightarrow \exist y(y \in B \land (x, y) \in f))$
 
 以及
 
-$\forall x, y_1, y_2[[(x, y_1) \in f \and (x, y_2) \in f] \rightarrow y_1 = y_2]$
+$\forall x, y_1, y_2[[(x, y_1) \in f \land (x, y_2) \in f] \rightarrow y_1 = y_2]$
 
 
 
@@ -2063,7 +2063,7 @@ $B$被稱為$f$的值域
 
 令$f$為一個集合$A$對集合$B$函數，函數$f$的圖形即為每一對的$(a, b)$，即為
 
-$\{(a, b) | a \in A \and f(a) = b\}$
+$\{(a, b) | a \in A \land f(a) = b\}$
 
 
 
