@@ -2853,3 +2853,157 @@ $t_4 = t_2 - q_3 t_3 = -1 - 1\times 4 = \color{red}{-5}$
 
 又因$m | a, m | b$，則$a \equiv b \pmod m$
 
+
+
+### 4.4 求解同餘方程式
+
+#### Introduce - 線性同餘
+
+當$m$為正整數，$a, b$為整數，而$x$為變數時，$ax \equiv b \pmod m$稱為線性同餘。
+
+
+
+#### Definition - 反元素
+
+若存在一個整數$\overline{a}$，使得$\overline{a}a \equiv 1$，則我們說$\overline{a}$為模$m$的反元素。
+
+
+
+#### Theorem 1
+
+若$a$與$m$為互質整數，且$m > 1$，則$a$在模$m$下的反元素存在，此外，在模$m$下，此反元素是唯一的。
+
+
+
+##### Proof (存在性)
+
+利用定理：若$\gcd(a, m) = 1$，則存在兩整數$s, t$使得$as + mt = 1$，也可以看成$as + mt \equiv 1 \pmod m$
+
+由於$mt \equiv 0 \pmod m$，因此$as \equiv 1 \pmod m$
+
+因此，$s$是$a$在模$m$的反元素。
+
+
+
+#### Introduce - 找出反元素
+
+我們可以用歐幾里得演算法與貝祖定理來找出反元素。
+
+首先我們必須要證明$\gcd(a, b) = 1$，再利用貝祖定理做回推。
+
+
+
+##### Example 1
+
+尋找3模7的反元素。
+
+根據歐幾里得演算法：
+
+$7 = 3\times 2 + 1$
+
+$3 = 1\times 3 + 0$
+
+因此我們能夠證明$\gcd(7, 3) = 1$
+
+
+
+接著利用貝祖定理進行回推，可得$-2\times 3 + 1\times 7 = 1$
+
+因此可以得到貝祖係數$s = -2, t = 1$
+
+因此，$-2$是3模7的反元素，而所有結果為$-2$模7同餘的整數皆為3模7的反元素。
+
+
+
+##### Example 2
+
+尋找101模4620的反元素。
+
+根據歐幾里得演算法：
+
+$4620 = 101\times 45 + 75$
+
+$101 = 75\times 1 + 26$
+
+$75 = 26\times 2 + 23$
+
+$26 = 23\times 1 + 3$
+
+$23 = 3\times 7 + 2$
+
+$3 = 2\times 1 + 1$
+
+$2 = 1\times 2 + 0$
+
+故我們可以證明$\gcd(101, 4620) = 1$
+
+
+
+利用這個來反推貝祖係數
+
+$1 = 3 - 2\times 1$
+
+$= 3 - (23 - 3\times 7) = 3\times 8 - 23$
+
+$= (26-23)\times 8 - 23 = 8\times 26 - 9\times 23$
+
+$= 8\times 26 - 9\times(75-26\times 2) = 26\times 26 - 9\times 75$
+
+$= (101-75)\times 26 - 9\times 75 = 101\times 26 - 35\times 75$
+
+$= 101\times 26 - 35\times(4620-101\times 45)$
+
+$= 101\times 1601 - 35\times 4620$
+
+故我們可以得到$s = 1601, t = -35$
+
+故我們說1601為101模4620的反元素。
+
+
+
+#### Introduce - 中國剩餘定理
+
+令$m_1, m_2, m_3, ..., m_n$為兩兩互質的正整數，而$a_1, a_2, a_3, ..., a_n$為任意正整數，則下列系統
+
+$\left\{\begin{array}\ x \equiv a_1 \pmod {m_1} \\ x \equiv a_2 \pmod {m_2} \\ x \equiv a_3 \pmod {m_3} \\ . \\. \\. \\ x \equiv a_n \pmod {m_n} \end{array}\right.$
+
+在$m = m_1 m_2 m_3 m_4 ... m_n$有唯一解，其中$0 \le x < m$，而其他解都在$x$模$m$的情況下同餘。
+
+
+
+##### Proof
+
+我們設$M_k = m/m_k$，其中$k = 1, 2, 3 ... n$，也就是說$M_k$為除了$m_k$以外的所有兩兩互質正整數乘積。
+
+當$i \neq k$時，$M_k$與$m_k$沒有公因數，故$\gcd(M_k, m_k) = 1$
+
+根據Theorem 1，可知存在一個反元素使得$M_k y_k \equiv 1 \pmod{m_k}$
+
+令$x = a_1M_1y_1 + a_2M_2y_2 + ... +a_nM_ny_n$，因為$M_j \equiv 0 \pmod{m_k}$，其中$j \neq k$
+
+因此，對所有的$k = 1, 2, 3, ..., n$，得到$x \equiv a_k M_k y_k \equiv a_k \pmod{m_k}$，因此$x$即為方程式系統的解。
+
+
+
+##### Example
+
+求解下列同餘方程式系統。
+
+$\left\{\begin{array}\ x \equiv 2 \pmod 3 \\ x \equiv 3 \pmod 5 \\ x \equiv 2 \pmod 7 \end{array}\right.$
+
+
+
+$m = 3\times 5\times 7$
+
+則
+
+$M_1 = 5\times 7 = 35$，$35 y_1 \equiv 1 \pmod 3$，得到$y_1 = 2$
+
+$M_2 = 3\times 7 = 21$，$21 y_2 \equiv 1 \pmod 5$，得到$y_2 = 1$
+
+$M_3 = 3\times 5 = 15$，$15y_3 \equiv 1 \pmod 7$，得到$y_3 = 1$
+
+因此$x = 35\times2\times 2 + 21\times 1\times 3 + 15\times 1\times 2 = 233 \equiv 23 \pmod{105}$
+
+故$x = 23$為這個系統的最小正整數解。
+
