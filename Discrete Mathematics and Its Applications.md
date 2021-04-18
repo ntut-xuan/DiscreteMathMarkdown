@@ -2831,3 +2831,25 @@ $t_4 = t_2 - q_3 t_3 = -1 - 1\times 4 = \color{red}{-5}$
 
 故與$n$的最小性矛盾，因此唯一性得證。
 
+
+
+### Theorem 5
+
+在先前有介紹過同餘的除法代數運算並不適用於每一種結果，在這邊會介紹同餘的除法代數運算。
+
+令$m$為一正整數，且$a, b, c$為整數，則若$ac \equiv bc \pmod m$和$\gcd(c,m) = 1$，則$a \equiv b \pmod m$。
+
+
+
+#### Proof
+
+若$ac \equiv bc \pmod m$，則$ac = mr + bc$，$ac - bc = mr$，$r = \dfrac{(ac-bc)}{m} = \dfrac{ac}{m}-\dfrac{bc}{m}$
+
+利用引理2可知
+
+若$m | ac$且$\gcd(m, c)$，則$m | a$
+
+若$m | bc$且$\gcd(m, c)$，則$m | b$
+
+又因$m | a, m | b$，則$a \equiv b \pmod m$
+
