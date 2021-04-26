@@ -3007,3 +3007,55 @@ $M_3 = 3\times 5 = 15$，$15y_3 \equiv 1 \pmod 7$，得到$y_3 = 1$
 
 故$x = 23$為這個系統的最小正整數解。
 
+
+
+### Introduce - 回朔代換
+
+我們可以用回朔代換來解中國剩餘問題。
+
+已知$a \equiv b \pmod m$，則我們可以知道存在一個$k$使得$a = k\times m + b$，$k \in \mathbb{Z}$
+
+因此我們可以假設並且代換。
+
+
+
+#### Example
+
+利用回朔代換的方法來找到所有的整數$x$，使得$x \equiv 1 \pmod 5$，$x \equiv 2 \pmod 6$，$x \equiv 3 \pmod 7$
+
+
+
+假設$x = 5t + 1, t\in\mathbb{Z}$，則我們可知$5t+1 \equiv 2 \pmod 6 \Longleftrightarrow 5t \equiv 1\pmod 6$
+
+- 利用尋找反元素的方法求得貝祖係數
+
+  $\gcd(5, 6) = 1$，因此我們可以寫成
+
+  $6 = 5\times 1 + 1$
+
+  所以$6\times 1 - 5\times 1 = 1$
+
+  因此我們可以知道貝祖係數為$(-1, 1)$，可知$t \equiv -1 \pmod 6$，因此我們假設$t \equiv 5$。
+
+我們假設$t = 6u + 5$，利用代換回$5t+1$可得$x = 30u+26$
+
+接著我們假設$30u +26 \equiv 3 \pmod 7 \Longleftrightarrow 30u \equiv 4 \pmod 7$
+
+- 利用尋找反元素的方法求得貝祖係數
+
+  $\gcd(30, 7) = 1$，因此我們可以寫成
+
+  $30 = 7\times 4 + 2$
+
+  $7 = 2\times 3 + 1$
+
+  所以$7 - 2\times 3 = 1$
+
+  再代換得到$7 - (30-7\times 4)\times 3 = 1 \Longleftrightarrow 7\times13-30\times3 = 1$
+
+  因此我們可以知道貝祖係數為$(13, -3)$，則可知$u \equiv 13 \equiv 6 \pmod 7$
+
+我們假設$u = 7v + 6$，利用代換可知$x = 30(7v+6)+26 = 210v+206$
+
+因此我們可以知道$x \equiv 206 \pmod{210}$
+
