@@ -4537,3 +4537,217 @@ $P(5, 5) = \dfrac{5!}{0!} = 5! = 120$
 
 選取47張牌，可以知道$C(52,47) = \dfrac{52!}{47!5!} = \dfrac{52\times51\times50\times49\times48}{5!} = 2598960$
 
+
+
+##### Example 2
+
+一個有10個隊員的網球隊，要挑出五個球員來參加比賽，可以有幾種不同的方式？
+
+
+
+轉換問題成在10個元素的集合中，所有挑出五個元素的子集合個數，也就是$C^{10}_5 = 252$
+
+
+
+#### Definition - 組合證明
+
+一個等式的組合證明是一種利用計數論證的證明方式。
+
+證明等式兩端都是在計算某種物件的數量，只是使用方法不同，或者說明有一種雙射的對應關係存在於等式兩端的物件。
+
+這兩種證明的形態分別稱作二重計數證明或是雙射證明。
+
+
+
+##### Proof
+
+首先使用雙射證明法求證對所有整數$n$與$r$，當$0 \le r \le n$，$C(n, r) = C(n, n-r)$。
+
+假設$S$為包含$n$個元素的集合，每個由包含$r$個元素之$S$子集合$A$對應到包含$n-r$個元素的集合$\overline{A}$的函數都是雙射函數。
+
+這樣一來，我們便證得$C(n, r) = C(n, n-r)$，因為有雙射關係的兩集合之元素個數相同。
+
+
+
+使用二重計數證明求證對於所有整數$n$與$r$，當$0 \le r \le n$，$C(n,r) = C(n, n-r)$。
+
+根據定義，包含$r$個元素的子集合$A$有$C(n, r)$個。每個這樣的子集合$A$都決定出哪些元素不在$A$中，也就是在$\overline{A}$中。
+
+因為$S$中包含$r$個元素之子集合補集有$n-r$個元素，所以應該有$C(n, n-r)$個包含$r$個元素之子集合，所以$C(n, r) = C(n, n-r)$
+
+
+
+### 6.4 二項式係數及其等式
+
+#### Introduce - 二項式係數
+
+在$n$個元素中選出$r-$組合的方法數為$\displaystyle \binom{n}{r}$，這個數也稱作二項式係數。
+
+因為這些數將出現在二項展開式的係數中，例如$(a+b)^n$。
+
+
+
+#### Theorem - 二項式定理
+
+令$x$與$y$為變數，而$n$為非負整數，則
+
+$(x+y)^n = \displaystyle \sum^n_{j=0} \binom{n}{j} x^{n-j}y^j = \binom{n}{0}x^n+\binom{n}{1}x^{n-1}y+...+\binom{n}{n-1}xy^{n-1}+\binom{n}{n}y^n$
+
+
+
+##### Example 1
+
+求出$(x+y)^4$的展開式。
+
+
+
+$(x+y)^4 = \displaystyle \sum^4_{j=0} \binom{4}{j} x^{4-j}y^j = \binom{4}{0}x^4 + \binom{4}{1}x^3y + \binom{4}{2}x^2y^2 + \binom{4}{3}xy^3 + \binom{4}{4}y^4$
+
+$= x^4+4x^3y+6x^2y^2+4xy^3+y^4$
+
+
+
+##### Example 2
+
+求出$(x+y)^{25}$展開式中$x^{12}y^{13}$的參數。
+
+
+
+$\displaystyle \binom{25}{13} = \dfrac{25!}{12!13!} = 5200300$
+
+
+
+##### Example 2
+
+求出$(2x-3y)^{25}$展開式中$x^{12}y^{13}$的係數。
+
+
+
+將式子轉化成$(2x+(-3y))^{25}$
+
+因此在$x^{12}y^{13}$的係數為$\displaystyle \binom{25}{12}\times 2^{12} + (-3)^{13} = -\dfrac{25!}{12!13!}\times 2^{12}\times 3^{13}$
+
+
+
+#### Corollary 1
+
+令$n$為非負整數，則$\displaystyle \sum^{n}_{k=0} \binom{n}{k} = 2^n$
+
+
+
+##### Proof
+
+利用二項式定理，令$x = 1, y = 1$
+
+則$\displaystyle 2^n = (1+1)^n = \sum^n_{k=0}\binom{n}{k}1^{k}1^{n-k} = \sum^n_{k=0}\binom{n}{k}$
+
+
+
+#### Corollary 2
+
+令$n$為正整數，則$\displaystyle \sum^{n}_{k=0} (-1)^k \binom{n}{k} = 0$
+
+
+
+##### Proof
+
+利用二項式定理，令$x=1, y = -1$
+
+則$\displaystyle 0^n = (1+(-1))^n = \sum^{n}_{k=0} \binom{n}{k} (-1)^k 1^{n-k} = \sum^n_{k=0} \binom{n}{k}(-1)^k$
+
+
+
+#### Corollary 3
+
+令$n$為非負整數，則$\displaystyle \sum^n_{k=0} 2^k \binom{n}{k} = 3^n$
+
+
+
+##### Proof
+
+利用二項式定理，令$x= 1, y = 2$
+
+則$\displaystyle 3^n = (1+2)^n = \sum^n_{k=0}\binom{n}{k}1^{n-k}2^k  =\sum^n_{k=0}\binom{n}{k} 2^k$
+
+
+
+#### Theorem - 帕斯卡等式
+
+令$n$與$k$為正整數，其中$n \ge k$，則$\displaystyle \binom{n+1}{k} = \binom{n}{k-1} + \binom{n}{k}$
+
+
+
+##### Proof
+
+假設$T$為包含$n+1$個元素的集合，且$a \in T$，$S = T - \{a\}$
+
+其中$T$有$\displaystyle \binom{n+1}{k}$個包含$k$個元素的不同子集合。
+
+將這些子集合分成兩類
+
+其中一個為包含$a$與$k-1$個$S$中的元素，數量為$\displaystyle \binom{n}{k-1}$
+
+另一個為不包含$a$，包含$k$個$S$中的元素，數量為$\displaystyle \binom{n}{k}$
+
+因此得到$\displaystyle \binom{n+1}{k} = \binom{n}{k-1} + \binom{n}{k}$
+
+
+
+#### Introduce - 帕斯卡三角形
+
+上面的等式可以寫成一個三角形，如下。
+
+![image-20210601150415074](https://i.imgur.com/x7NpGxo.png)
+
+
+
+#### Theorem - 凡德蒙德等式
+
+令$m$、$n$、$r$為非負整數，而且$r$不能大於$m$與$n$，則$\displaystyle \binom{m+n}{r} = \sum^r_{k=0} \binom{m}{r-k} \binom{n}{k}$
+
+
+
+##### Proof
+
+假設在一個集合有$m$個元素，第二個集合有$n$個元素，則在這兩個元素取$r$個元素的方法有$\displaystyle \binom{n+m}{r}$個。
+
+另外一種方法，若在第一個集合取出$k$個元素，第二個集合取出$r-k$個元素，其中$0 \le k \le r$
+
+則在第一個集合取出$k$個元素有$\displaystyle \binom{n}{k}$個方法，在第二個集合取出$r-k$個元素有$\displaystyle \binom{m}{r-k}$個方法。
+
+利用乘法法則，則上面的選取方法有$\displaystyle \binom{n}{k} \binom{m}{r-k}$種方法。
+
+窮舉所有的$k$利用加法定理加起來，即為$\displaystyle \binom{n+m}{r}$的方法數，因此$\displaystyle \binom{n+m}{r} = \sum^r_{k=0} \binom{n}{k} \binom{m}{r-k}$
+
+
+
+#### Corollary 4
+
+若$n$為非負整數，則$\displaystyle \binom{2n}{n} = \sum^n_{k=0} \binom{n}{k}^2$
+
+
+
+##### Proof
+
+令$n = r = m$，套入凡德蒙德等式，得$\displaystyle \binom{n+n}{n}= \sum^n_{k=0} \binom{n}{n-k} \binom{n}{k}$
+
+因為$\displaystyle \binom{n}{n-k} = \binom{n}{k}$，則$\displaystyle \binom{2n}{n}= \sum^n_{k=0} \binom{n}{k}^2$
+
+
+
+#### Theorem - 朱世傑恆等式
+
+令$n$和$r$為非負整數，且$r \le n$，則$\displaystyle \binom{n+1}{r+1} = \sum^n_{j=r} \binom{j}{r}$
+
+##### Proof
+
+利用數學歸納法來證明。
+
+基礎步驟：令$n = r$，則有$\displaystyle \sum^r_{j=r} \binom{j}{r} = \binom{r}{r} = 1 = \binom{r+1}{r+1}$
+
+歸納步驟：假設$P(k)$代表$\displaystyle \binom{k+1}{r+1} = \sum^{k}_{j=r} \binom{j}{r}$為真，其中$k \ge r$
+
+則證明若$n=k+1$，$\displaystyle \binom{k+2}{r+1} = \binom{k+1}{r} + \binom{k+1}{r+1} = \binom{k+1}{r} + (\sum^{k}_{j=r} \binom{j}{r}) = \sum^{k+1}_{j=r} \binom{j}{r}$
+
+根據歸納步驟，得到$\displaystyle \binom{k+2}{r+1} = \sum^{k+1}_{j=r}$，因此$P(k) \rightarrow P(k+1)$為真，證畢。
+
