@@ -513,7 +513,7 @@ $(p \rightarrow q) \land (p \rightarrow r) \equiv p \rightarrow (q \land r)$
 
 $(p \rightarrow r) \land (q \rightarrow r) \equiv (p \lor q) \rightarrow r$
 
-$(p \rightarrow q) \land (p \rightarrow r) \land p \rightarrow (q \lor r)$
+$(p \rightarrow q) \lor (p \rightarrow r) \equiv p \rightarrow (q \lor r)$
 
 $(p \rightarrow r) \lor (q \rightarrow r) \equiv (p \land q) \rightarrow r$
 
